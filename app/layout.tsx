@@ -2,8 +2,8 @@ import ChatBox from "./(landing)/components/Client/Chat/Chat";
 import { exo, roboto } from "./design-system";
 import "./globals.css";
 
+import { Analytics } from '@vercel/analytics/react';
 import clsx from "clsx";
-import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",
