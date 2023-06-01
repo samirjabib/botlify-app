@@ -1,5 +1,5 @@
-import ChatBox from "./(landing)/components/Client/Chat/Chat";
-import Providers from "./(landing)/components/Client/Providers/Providers";
+import ChatBox from "./components/Client/Chat/Chat";
+import Providers from "./components/Client/Providers/Providers";
 import { exo, roboto } from "./design-system";
 import "./globals.css";
 

@@ -2,12 +2,17 @@
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
+
     extend: {
       colors:{
         blue:'#087ea4',
         gray:'#23272f',
         darkGray:'#1c1f25',
         grayBlack:'#16181d',
+        grayLight:'#40414f'
+      },
+      boxShadow: {
+        'outline-blue': '0 0 0 3px #087ea4',
       },
       screens: {
         sm: '640px',
@@ -37,6 +42,11 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+    variants: {
+      extend: {
+        boxShadow: ['focus'],
       },
     },
   },

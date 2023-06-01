@@ -2,12 +2,13 @@
 
 import { FC } from "react";
 import { ChatHeader } from "./ChatHeader";
+
 import {
   Accordion,
   AccordionItem,
   AccordionContent,
   AccordionTrigger,
-} from "../../../../components/ui/Accordion";
+} from "../ui/Accordion";
 import ChatInput from "./ChatInput";
 
 const ChatBox: FC = () => {

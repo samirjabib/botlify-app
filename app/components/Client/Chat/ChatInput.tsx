@@ -1,10 +1,10 @@
-import { cn } from "../../../../lib/class-name-utils";
 import { useForm } from "react-hook-form";
 import { FC, HTMLAttributes } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
 import useSWR from "swr";
 import { nanoid } from "nanoid";
+import { cn } from "../../../lib/class-name-utils";
 
 interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -32,8 +32,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   const onSubmit = (data: FormDataChatInput) => console.log(data, " click");
 
   return (
-    <div {...props} className={cn("border-t border-white/60 ", className)}>
-      <div className=" shadow-lg relative mt-4 flex-1 overflow-hidden rounded-lg border-none outline-none">
+    <div {...props} className={cn("py-4", className)}>
+      <div className=" relative flex-1 overflow-hidden rounded-lg outline-none focus:outline-none ">
         <TextareaAutosize
           rows={2}
           maxRows={4}
@@ -51,10 +51,10 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           autoFocus
           placeholder="Write a message..."
           className={clsx(
-            "bg-gray",
-            " disabled:opacity-50 resize-none rounded-md",
-            "block w-full border outline-none border-white/60 text-white placeholder-white/60",
-            "focus:ring-0 text-sm sm:leading-6 py-1.5"
+            "bg-grayLight shadow-2xl ",
+            " resize-none rounded-md",
+            "block w-full border outline-none border-darkGray text-white placeholder-white/60",
+            "focus:outline-none text-sm sm:leading-6 py-1.5"
           )}
         />
       </div>
