@@ -7,7 +7,7 @@ module.exports = {
         blue:'#087ea4',
         gray:'#23272f',
         darkGray:'#1c1f25',
-        black:'#16181d',
+        grayBlack:'#16181d',
       },
       screens: {
         sm: '640px',

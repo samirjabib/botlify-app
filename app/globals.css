@@ -21,10 +21,11 @@
   * {
     outline: none;
     @apply antialiased;
-    background-color: black;
   }
 
-  
+  body {
+
+  }
 
   .wrapper {
     @apply mx-auto px-12 xl:container;
