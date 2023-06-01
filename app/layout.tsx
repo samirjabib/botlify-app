@@ -1,7 +1,9 @@
+import ChatBox from "./(landing)/components/Client/Chat/Chat";
 import { exo, roboto } from "./design-system";
 import "./globals.css";
 
 import clsx from "clsx";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",
@@ -21,7 +23,11 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ChatBox />
+        <Analytics />
+      </body>
     </html>
   );
 }

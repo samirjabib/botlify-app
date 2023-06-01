@@ -4,14 +4,14 @@ Landing Page with Chat Box-GPT
 
 ## How to run:
 
-Clone the project, then we recommend ppnpm to install and run the project.
+Clone the project, then we recommend yarn to install and run the project.
 
 ```bash
-pnpm install
+yarn install
 ```
 
 Then:
 
 ```bash
-pnpm dev
+yarn dev
 ```
