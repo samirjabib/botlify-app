@@ -10,7 +10,7 @@ interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 
 const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   return (
-    <div {...props} className={cn("botder-t border-blue", className)}>
+    <div {...props} className={cn("border-t border-white/60", className)}>
       <div className="relative mt-4 flex-1 overflow-hidden rounded-lg border-none outline-none">
         <TextareaAutosize
           rows={2}
@@ -18,9 +18,10 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           autoFocus
           placeholder="Write a message..."
           className={clsx(
-            "peer disabled:opacity-50 pr-14 resize-none",
-            "block w-full border-0 bg-zinc-100 py-1.5",
-            "text-gray-900 focus:ring-0 text-sm sm:leading-6"
+            "bg-gray",
+            " disabled:opacity-50 resize-none rounded-md",
+            "block w-full border outline-none border-white/60 text-white placeholder-white/60",
+            "focus:ring-0 text-sm sm:leading-6 py-1.5"
           )}
         />
       </div>
