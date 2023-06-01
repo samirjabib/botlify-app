@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, HTMLAttributes } from "react";
 import { cn } from "../../../../lib/class-name-utils";
 import TextareaAutosize from "react-textarea-autosize";
