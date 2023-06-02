@@ -10,8 +10,17 @@ import {
   AccordionTrigger,
 } from "../ui/Accordion";
 import ChatInput from "./ChatInput";
+import { trpc } from "../../../utils/trpc";
 
-const ChatBox: FC = () => {
+const Chat: FC = () => {
+  // const { data: users, isLoading, isFetching } = trpc.getUsers.useQuery();
+
+  // if (isLoading || isFetching) {
+  //   return <p>Loading...</p>;
+  // }
+
+  // console.log(users);
+
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
@@ -33,4 +42,4 @@ const ChatBox: FC = () => {
   );
 };
 
-export default ChatBox;
+export default Chat;

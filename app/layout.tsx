@@ -1,4 +1,3 @@
-import ChatBox from "./components/Client/Chat/Chat";
 import Providers from "./components/Client/Providers/Providers";
 import { exo, roboto } from "./design-system";
 import "./globals.css";
@@ -26,7 +25,6 @@ export default function RootLayout({
       </head>
       <body className="bg-black">
         <Providers>{children}</Providers>
-        <ChatBox />
         <Analytics />
       </body>
     </html>
