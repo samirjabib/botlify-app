@@ -13,7 +13,6 @@ interface FormDataChatInput {
 }
 
 const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
-  
   const {
     register,
     handleSubmit,
