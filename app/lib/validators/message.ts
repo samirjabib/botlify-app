@@ -7,4 +7,11 @@ export const messageSchema = z.object({
     text: z.string(),
 })
 
+
+//array validator
+
+export const MessageArraySchema = z.array(messageSchema)
+
 export type Message = z.infer<typeof messageSchema>
+
+

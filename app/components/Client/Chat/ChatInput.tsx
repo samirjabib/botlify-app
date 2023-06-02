@@ -4,6 +4,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
 import { cn } from "../../../lib/class-name-utils";
+import { useMutation } from "@tanstack/react-query";
 
 interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -17,6 +18,15 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormDataChatInput>();
+
+  const { mutate, isLoading } = useMutation((data: FormDataChatInput) => {
+    const response = fetch("/api/message", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    return response;
+  });
 
   const onSubmit = (data: FormDataChatInput) => console.log(data, " click");
 

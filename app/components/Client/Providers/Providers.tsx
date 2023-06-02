@@ -1,19 +1,22 @@
 "use client";
 
 import { FC } from "react";
-import { TrpcProvider } from "../../../utils/trpc-provider";
 import Chat from "../Chat/Chat";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 interface ProvidersProps {
   children: React.ReactNode;
 }
 
 const Providers: FC<ProvidersProps> = ({ children }) => {
+  const queryClient = new QueryClient();
+
   return (
-    <TrpcProvider>
+    <QueryClientProvider client={queryClient}>
       {children}
       <Chat />
-    </TrpcProvider>
+    </QueryClientProvider>
   );
 };
 
