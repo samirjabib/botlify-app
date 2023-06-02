@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { FC, HTMLAttributes } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
-import useSWR from "swr";
 import { nanoid } from "nanoid";
 import { cn } from "../../../lib/class-name-utils";
 
@@ -18,16 +17,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormDataChatInput>();
-
-  const { mutate } = useSWR("chat", () => {
-    return fetch("http://localhost:3000/api/chat", {
-      method: "POST",
-      body: JSON.stringify({ message: "hello" }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => res.json());
-  });
 
   const onSubmit = (data: FormDataChatInput) => console.log(data, " click");
 

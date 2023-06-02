@@ -13,7 +13,9 @@ import ChatInput from "./ChatInput";
 import { trpc } from "../../../utils/trpc";
 
 const Chat: FC = () => {
-  // const { data: users, isLoading, isFetching } = trpc.getUsers.useQuery();
+  const { data: users, isLoading, isFetching } = trpc.getUsers.useQuery();
+
+  console.log(users);
 
   // if (isLoading || isFetching) {
   //   return <p>Loading...</p>;
