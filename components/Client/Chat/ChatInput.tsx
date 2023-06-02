@@ -3,8 +3,8 @@ import { FC, HTMLAttributes } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
-import { cn } from "../../../lib/class-name-utils";
 import { useMutation } from "@tanstack/react-query";
+import { cn } from "../../../lib/class-name-utils";
 
 interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 

@@ -1,6 +1,6 @@
-import { Message } from "../../../../lib/validators/message"
 import {create} from 'zustand'
 import { nanoid } from 'nanoid'
+import { Message } from '../../../../lib/validators/message'
 
 
 type MessagesState = {
