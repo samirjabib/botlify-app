@@ -18,3 +18,21 @@ export interface ChatGPTMessage {
     max_tokens: number,
     stream: boolean
 }
+
+
+export async function OpenAIStream(payload:OpenAIStreamPayload){
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+
+  let counter = 0;
+
+  const response = await fetch('https://api.openai.com/v1/engines/davinci/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    }
+  
+    });
+    
+}
