@@ -23,12 +23,8 @@
     @apply antialiased;
   }
 
-  body {
-
-  }
-
   .wrapper {
-    @apply mx-auto px-12 xl:container;
+    @apply mx-auto px-8 xl:container;
   }
 
   .display-title {

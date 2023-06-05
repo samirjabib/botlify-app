@@ -33,7 +33,7 @@ export async function POST(req:Request){
 
     const stream = await OpenAIStreamPayload(payload)
 
-    return new Response(messages)
+    return new Response(stream)
 }
 
 
