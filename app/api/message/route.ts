@@ -4,9 +4,9 @@ import { ChatGPTMessage, OpenAIStreamPayload } from '../../../lib/open-ai/openai
 import { MessageArraySchema } from "../../../lib/validators/message"
 
 export async function POST(req:Request){
-    const { messages } = await req.json()   
-
-
+    const { messages } = await req.json()  
+    console.log(messages) 
+ 
     // const parsedMessages = MessageArraySchema.parse(messages)
 
     // console.log(parsedMessages)

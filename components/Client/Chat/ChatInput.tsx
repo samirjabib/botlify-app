@@ -18,16 +18,18 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormDataChatInput>();
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
-    mutationFn: async (messages: Message) => {
+    mutationFn: async (message: Message) => {
       //todo: fix send message to server
       const response = await fetch("/api/message", {
         method: "POST",
-        body: JSON.stringify({ message: [messages] }),
+        body: JSON.stringify({ messages: [message] }),
       });
+      console.log(response);
 
       return response.body;
     },
