@@ -20,13 +20,13 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     formState: { errors },
   } = useForm<FormDataChatInput>();
 
-  const { mutate, isLoading } = useMutation((data: FormDataChatInput) => {
-    const response = fetch("/api/message", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
-    return response;
+  const { mutate, isLoading } = useMutation({
+    mutationFn: (message: Message) => {
+      return fetch("/api/messages", {
+        method: "POST",
+        body: JSON.stringify({ message: [message] }),
+      });
+    },
   });
 
   const onSubmit = (data: FormDataChatInput) => {
