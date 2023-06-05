@@ -35,6 +35,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       isUserMessage: true,
       text: data.text,
     };
+
     mutate(message);
   };
 
@@ -47,7 +48,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              handleSubmit(onSubmit);
+              handleSubmit(onSubmit)();
             }
           }}
           {...register("text")}
