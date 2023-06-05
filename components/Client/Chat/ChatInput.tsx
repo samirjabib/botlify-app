@@ -5,11 +5,12 @@ import clsx from "clsx";
 import { nanoid } from "nanoid";
 import { useMutation } from "@tanstack/react-query";
 import { cn } from "../../../lib/class-name-utils";
+import { Message } from "../../../lib/validators/message";
 
 interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 
 interface FormDataChatInput {
-  message: string;
+  text: string;
 }
 
 const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
@@ -28,7 +29,14 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     return response;
   });
 
-  const onSubmit = (data: FormDataChatInput) => console.log(data, " click");
+  const onSubmit = (data: FormDataChatInput) => {
+    const message: Message = {
+      id: nanoid(),
+      isUserMessage: true,
+      text: data.text,
+    };
+    mutate(message);
+  };
 
   return (
     <div {...props} className={cn("py-4", className)}>
@@ -38,15 +46,11 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           maxRows={4}
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
-              const message = {
-                id: nanoid(),
-              };
-
               e.preventDefault();
-              handleSubmit(onSubmit)();
+              handleSubmit(onSubmit);
             }
           }}
-          {...register("message")}
+          {...register("text")}
           autoFocus
           placeholder="Write a message..."
           className={clsx(
