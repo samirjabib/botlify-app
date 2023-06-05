@@ -20,12 +20,16 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     formState: { errors },
   } = useForm<FormDataChatInput>();
 
-  const { mutate, isLoading } = useMutation({
-    mutationFn: (message: Message) => {
-      return fetch("/api/messages", {
+  const { mutate: sendMessage, isLoading } = useMutation({
+    mutationKey: ["sendMessage"],
+    mutationFn: async (messages: Message) => {
+      //todo: fix send message to server
+      const response = await fetch("/api/message", {
         method: "POST",
-        body: JSON.stringify({ message: [message] }),
+        body: JSON.stringify({ message: [messages] }),
       });
+
+      return response.body;
     },
   });
 
@@ -36,7 +40,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       text: data.text,
     };
 
-    mutate(message);
+    sendMessage(message);
   };
 
   return (
