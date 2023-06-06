@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from "../ui/Accordion";
 import ChatInput from "./ChatInput";
+import ChatMessages from "./ChatMessages";
 
 const Chat: FC = () => {
   return (
@@ -24,6 +25,7 @@ const Chat: FC = () => {
               <div className="flex flex-col h-80">
                 {/* <ChatMessages className='px-2 py-3 flex-1' /> */}
                 <ChatInput className="px-6" />
+                <ChatMessages />
               </div>
             </AccordionContent>
           </div>

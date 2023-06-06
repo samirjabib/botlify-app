@@ -4,6 +4,7 @@ import { FC } from "react";
 import Chat from "../Chat/Chat";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MessagesProvider } from "../Chat/context/messages";
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {children}
+      <MessagesProvider>{children}</MessagesProvider>
       <Chat />
     </QueryClientProvider>
   );
