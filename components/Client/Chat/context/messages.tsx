@@ -26,9 +26,12 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     updateFn: (prevText: string) => string
   ) => {
     setMessages((prev) =>
-      prev.map((message) =>
-        message.id === id ? { ...message, ...message } : message
-      )
+      prev.map((message) => {
+        if (message.id === id) {
+          return { ...message, text: updateFn(message.text) };
+        }
+        return message;
+      })
     );
   };
 

@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { FC, HTMLAttributes, useContext } from "react";
+import { FC, HTMLAttributes, useContext, useRef } from "react";
 import TextareaAutosize from "react-textarea-autosize";
+import { toast } from "react-hot-toast";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
 import { useMutation } from "@tanstack/react-query";
@@ -22,8 +23,10 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     reset,
   } = useForm<FormDataChatInput>();
 
-  const { addMessage, setIsMessageUpdating, updateMessage } =
+  const { addMessage, setIsMessageUpdating, updateMessage, removeMessage } =
     useContext(MessagesContext);
+
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
@@ -58,9 +61,17 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
         updateMessage(id, (prev) => prev + chunkValue);
       }
 
-      //clean up
       setIsMessageUpdating(false);
       reset();
+
+      setTimeout(() => {
+        textareaRef.current?.focus();
+      }, 10);
+    },
+    onError: (_, message) => {
+      toast.error("Something went wrong. Please try again.");
+      removeMessage(message.id);
+      textareaRef.current?.focus();
     },
   });
 
@@ -88,6 +99,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           }}
           {...register("text")}
           autoFocus
+          ref={textareaRef}
           placeholder="Write a message..."
           className={clsx(
             "bg-grayLight shadow-2xl ",
