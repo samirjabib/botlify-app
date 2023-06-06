@@ -57,6 +57,10 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
         const chunkValue = decoder.decode(value);
         updateMessage(id, (prev) => prev + chunkValue);
       }
+
+      //clean up
+      setIsMessageUpdating(false);
+      reset();
     },
   });
 
