@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
-import { FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes, useContext } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
 import { useMutation } from "@tanstack/react-query";
 import { cn } from "../../../lib/class-name-utils";
 import { Message } from "../../../lib/validators/message";
+import { MessagesContext } from "./context/messages";
 
 interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -21,6 +22,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     reset,
   } = useForm<FormDataChatInput>();
 
+  const { addMessage, setIsMessageUpdating } = useContext(MessagesContext);
+
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
     mutationFn: async (message: Message) => {
@@ -31,7 +34,18 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       return response.body;
     },
     onSuccess: async (stream) => {
-      console.log(stream);
+      if (!stream) throw new Error("No stream");
+
+      const reader = stream.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chuckValue = decoder.decode(value);
+        console.log(chuckValue);
+      }
     },
   });
 
