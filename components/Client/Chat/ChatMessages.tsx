@@ -1,14 +1,15 @@
-"use cleint";
+"use client";
 
 import { FC, HTMLAttributes, useContext } from "react";
 import { cn } from "../../../lib/class-name-utils";
 import { MessagesContext } from "./context/messages";
-import MarkdownLite from "./ChatMarkDownLite";
 
 interface ChatMessagesProps extends HTMLAttributes<HTMLDivElement> {}
 
 const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
   const { messages } = useContext(MessagesContext);
+  console.log(messages);
+
   const inverseMessages = [...messages].reverse();
 
   return (
@@ -43,7 +44,7 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
                     "bg-gray-200 text-gray-900": !message.isUserMessage,
                   })}
                 >
-                  <MarkdownLite text={message.text} />
+                  {/* <MarkdownLite text={message.text} /> */}
                 </p>
               </div>
             </div>

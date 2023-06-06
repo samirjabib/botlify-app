@@ -22,11 +22,10 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     formState: { errors },
     reset,
   } = useForm<FormDataChatInput>();
-
-  const { addMessage, setIsMessageUpdating, updateMessage, removeMessage } =
+  const { addMessage, setIsMessageUpdating, updateMessage, messages } =
     useContext(MessagesContext);
 
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  console.log(messages);
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
@@ -40,38 +39,29 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     onSuccess: async (stream) => {
       if (!stream) throw new Error("No stream");
 
+      const reader = stream.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+
+      // construct new message to add
       const id = nanoid();
       const responseMessage: Message = {
-        id: nanoid(),
+        id,
         isUserMessage: false,
         text: "",
       };
 
+      // add new message to state
       addMessage(responseMessage);
-      setIsMessageUpdating(true);
 
-      const reader = stream.getReader();
-      const decoder = new TextDecoder();
-      let done = false;
+      setIsMessageUpdating(true);
 
       while (!done) {
         const { value, done: doneReading } = await reader.read();
         done = doneReading;
         const chunkValue = decoder.decode(value);
-        updateMessage(id, (prev) => prev + chunkValue);
+        console.log(chunkValue);
       }
-
-      setIsMessageUpdating(false);
-      reset();
-
-      setTimeout(() => {
-        textareaRef.current?.focus();
-      }, 10);
-    },
-    onError: (_, message) => {
-      toast.error("Something went wrong. Please try again.");
-      removeMessage(message.id);
-      textareaRef.current?.focus();
     },
   });
 
@@ -99,7 +89,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           }}
           {...register("text")}
           autoFocus
-          ref={textareaRef}
           placeholder="Write a message..."
           className={clsx(
             "bg-grayLight shadow-2xl ",

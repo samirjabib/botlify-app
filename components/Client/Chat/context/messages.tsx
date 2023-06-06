@@ -6,10 +6,12 @@ import { nanoid } from "nanoid";
 
 export const MessagesContext = createContext<MessageContextType>(INITIAL_STATE);
 
+const defaultValue = [
+  { id: nanoid(), text: "how i can help you?", isUserMessage: false },
+];
+
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
-  const [messages, setMessages] = useState<Message[]>([
-    { id: nanoid(), text: "how i can help you?", isUserMessage: false },
-  ]);
+  const [messages, setMessages] = useState<Message[]>(defaultValue);
 
   const [isMessageUpdating, setIsMessageUpdating] = useState<boolean>(false);
 
@@ -38,12 +40,12 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
   return (
     <MessagesContext.Provider
       value={{
-        addMessage,
-        isMessageUpdating,
         messages,
+        isMessageUpdating,
+        addMessage,
         removeMessage,
-        setIsMessageUpdating,
         updateMessage,
+        setIsMessageUpdating,
       }}
     >
       {children}
