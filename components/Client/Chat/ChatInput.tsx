@@ -30,6 +30,9 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       });
       return response.body;
     },
+    onSuccess: async (stream) => {
+      console.log(stream);
+    },
   });
 
   const onSubmit = (data: FormDataChatInput) => {

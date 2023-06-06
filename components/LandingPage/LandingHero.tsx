@@ -1,8 +1,9 @@
 const LandingHero = () => {
+  
   return (
-    <div className="w-full  wrapper mt-44">
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="">
+    <div className="w-full  wrapper ">
+      <div className="grid grid-cols-1 md:grid-cols-2 relative mt-44">
+        <div className=" col-span-1">
           <h1 className="text-white text-5xl font-bold mb-4 tracking-tighter max-w-[550px] text-center md:text-start">
             Impulsa tu negocio con bots inteligentes
           </h1>
@@ -21,8 +22,7 @@ const LandingHero = () => {
             </button>
           </div>
         </div>
-        <div className="wrapper ">
-          {/* <Image/> */}
+        <div className="wrapper col-span-1">
           <video
             src="https://res.cloudinary.com/dnoeqtok8/video/upload/v1686005187/uhpp2eiegurrimn7sfyi.mp4"
             autoPlay

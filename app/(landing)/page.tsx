@@ -1,9 +1,9 @@
-import LandingHero from "./components/LandingHero";
+import LandingPage from '../../components/LandingPage/LandingPage';
 
-export default async function LandingPage() {
+export default async function Page() {
   return (
-    <div className="w-full">
-      <LandingHero />
-    </div>
+    <>
+      <LandingPage/>
+    </>
   );
 }
