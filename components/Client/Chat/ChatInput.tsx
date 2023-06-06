@@ -22,7 +22,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     reset,
   } = useForm<FormDataChatInput>();
 
-  const { addMessage, setIsMessageUpdating } = useContext(MessagesContext);
+  const { addMessage, setIsMessageUpdating, updateMessage } =
+    useContext(MessagesContext);
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
@@ -36,6 +37,16 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     onSuccess: async (stream) => {
       if (!stream) throw new Error("No stream");
 
+      const id = nanoid();
+      const responseMessage: Message = {
+        id: nanoid(),
+        isUserMessage: false,
+        text: "",
+      };
+
+      addMessage(responseMessage);
+      setIsMessageUpdating(true);
+
       const reader = stream.getReader();
       const decoder = new TextDecoder();
       let done = false;
@@ -43,8 +54,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       while (!done) {
         const { value, done: doneReading } = await reader.read();
         done = doneReading;
-        const chuckValue = decoder.decode(value);
-        console.log(chuckValue);
+        const chunkValue = decoder.decode(value);
+        updateMessage(id, (prev) => prev + chunkValue);
       }
     },
   });
