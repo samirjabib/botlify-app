@@ -24,7 +24,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   } = useForm<FormDataChatInput>();
   const { addMessage, setIsMessageUpdating, updateMessage, messages } =
     useContext(MessagesContext);
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
@@ -59,9 +59,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
         const { value, done: doneReading } = await reader.read();
         done = doneReading;
         const chunkValue = decoder.decode(value);
-        updateMessage(id, (prev) => prev + chunkValue);
-        setIsMessageUpdating(false);
-        reset();
       }
     },
   });
@@ -90,7 +87,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           }}
           {...register("text")}
           autoFocus
-          ref={textareaRef}
           placeholder="Write a message..."
           className={clsx(
             "bg-grayLight shadow-2xl ",
