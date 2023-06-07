@@ -72,7 +72,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       }, 10);
     },
     onError: (_, message) => {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Algo salio mal, intenta otra vez.");
       removeMessage(message.id);
       textareaRef.current?.focus();
     },

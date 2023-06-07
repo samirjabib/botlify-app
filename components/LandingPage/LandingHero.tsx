@@ -24,7 +24,7 @@ const LandingHero = () => {
             </button>
           </div>
         </div>
-        <div className=" col-span-1 mt-12 sm:mt-8 md:mt-0 w-full border-8 border-white/20 shadow-2xl rounded-md relative top-44">
+        <div className=" col-span-1 mt-12 sm:mt-8 md:mt-0 w-full border-4 border-white/20 shadow-2xl rounded-md relative top-44">
           <video
             src="https://res.cloudinary.com/dnoeqtok8/video/upload/v1686005187/uhpp2eiegurrimn7sfyi.mp4"
             autoPlay
