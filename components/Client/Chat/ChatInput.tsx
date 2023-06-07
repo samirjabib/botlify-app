@@ -24,7 +24,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   } = useForm<FormDataChatInput>();
   const { addMessage, setIsMessageUpdating, updateMessage, messages } =
     useContext(MessagesContext);
-
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
@@ -90,6 +90,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           }}
           {...register("text")}
           autoFocus
+          ref={textareaRef}
           placeholder="Write a message..."
           className={clsx(
             "bg-grayLight shadow-2xl ",
