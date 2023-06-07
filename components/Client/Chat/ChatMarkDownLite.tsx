@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const MarkdownLite = ({ text }: { text: string }) => {
+const MarkdownLite = ({ text, isUserMessage }: { text: string , isUserMessage:boolean}) => {
   const linkRegex = /\[(.+?)\]\((.+?)\)/g
   const parts = []
 

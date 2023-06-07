@@ -25,7 +25,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   const { addMessage, setIsMessageUpdating, updateMessage, messages } =
     useContext(MessagesContext);
 
-  console.log(messages);
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
@@ -60,7 +59,9 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
         const { value, done: doneReading } = await reader.read();
         done = doneReading;
         const chunkValue = decoder.decode(value);
-        console.log(chunkValue);
+        updateMessage(id, (prev) => prev + chunkValue);
+        setIsMessageUpdating(false);
+        reset();
       }
     },
   });
