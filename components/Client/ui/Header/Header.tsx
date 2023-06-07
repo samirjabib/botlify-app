@@ -8,7 +8,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
   return (
-    <header className="h-20 w-full fixed top-0 left-0 bg-gray ">
+    <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
       <div className="wrapper  flex justify-between h-full items-center">
         <div className="flex flex-row items-center gap-x-2 font-extrabold">
           <span className="text-white border-2 border-white">Logo</span>
