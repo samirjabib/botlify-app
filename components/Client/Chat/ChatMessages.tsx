@@ -42,10 +42,10 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
               >
                 <p
                   className={`
-                    rounded-md
+                    rounded-md  px-4 py-2 
                      ${
                        message.isUserMessage
-                         ? "text-white bg-green-400"
+                         ? "text-white bg-grayLight "
                          : "bg-blue text-white/80"
                      }
                   `}

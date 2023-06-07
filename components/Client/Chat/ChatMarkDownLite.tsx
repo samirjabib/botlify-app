@@ -37,11 +37,11 @@ const MarkdownLite = ({ text }: { text: string }) => {
   }
 
   return (
-    <div className="px-4 py-2 ">
+    <>
       {parts.map((part, i) => (
         <React.Fragment key={i}>{part}</React.Fragment>
       ))}
-    </div>
+    </>
   );
 };
 

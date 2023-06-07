@@ -36,6 +36,9 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
       });
       return response.body;
     },
+    onMutate(message: Message) {
+      addMessage(message);
+    },
     onSuccess: async (stream) => {
       if (!stream) throw new Error("No stream");
 

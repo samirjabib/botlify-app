@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 export const MessagesContext = createContext<MessageContextType>(INITIAL_STATE);
 
 const defaultValue = [
-  { id: nanoid(), text: "how i can help you?", isUserMessage: false },
+  { id: nanoid(), text: "¿Bienvenido, como puedo ayudarte?", isUserMessage: false },
 ];
 
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
