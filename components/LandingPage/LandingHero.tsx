@@ -19,7 +19,7 @@ const LandingHero = () => {
             <button className="flex-1 text-lg bg-blue transition-all hover:bg-hoverBlue rounded-md cursor-pointer text-white font-bold px-6 py-2 shadow-lg">
               Contactanos
             </button>
-            <button className="flex-1  text-lg border-[0.5px] rounded-md border-white/30 cursor-pointer text-white font-extrabold px-6 py-2 shadow-lg">
+            <button className="flex-1  text-lg border-[0.5px] rounded-md border-white/30 transition-all hover:bg-white/10 cursor-pointer text-white font-extrabold px-6 py-2 shadow-lg">
               Servicios
             </button>
           </div>
