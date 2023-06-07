@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors:{
+        whiteBlue:'#9ccbdb',
         blue:'#087ea4',
         hoverBlue:'#066583',
         hoverBlueLight:'#3998b6',
