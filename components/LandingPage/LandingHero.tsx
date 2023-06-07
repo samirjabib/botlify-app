@@ -1,8 +1,8 @@
 const LandingHero = () => {
   return (
-    <div className="w-full  wrapper h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center h-full mb-24">
-        <div className=" col-span-1 ">
+    <div className="w-full h-screen">
+      <div className=" wrapper grid grid-cols-1 md:grid-cols-2 justify-center ">
+        <div className=" col-span-1 relative top-44">
           <div className="flex flex-col items-center md:items-start">
             <h1 className="text-white text-4xl sm:text-5xl font-extrabold mb-4 tracking-tighter max-w-[550px] text-center md:text-start">
               Impulsa tu negocio con bots inteligentes
@@ -24,13 +24,13 @@ const LandingHero = () => {
             </button>
           </div>
         </div>
-        <div className="wrapper col-span-1 sm:mt-8 md:mt-0 w-full ">
+        <div className=" col-span-1 mt-12 sm:mt-8 md:mt-0 w-full border-8 border-white/20 shadow-2xl rounded-md relative top-44">
           <video
             src="https://res.cloudinary.com/dnoeqtok8/video/upload/v1686005187/uhpp2eiegurrimn7sfyi.mp4"
             autoPlay
             loop
             muted
-            className="w-full object-cover rounded-md shadow-lg hidden sm:block h-full"
+            className="w-full object-cover  h-full"
           />
         </div>
       </div>
