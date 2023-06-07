@@ -10,7 +10,6 @@ interface ChatMessagesProps extends HTMLAttributes<HTMLDivElement> {}
 const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
   const { messages } = useContext(MessagesContext);
 
-  console.log(messages);
 
   const inverseMessages = [...messages].reverse();
 

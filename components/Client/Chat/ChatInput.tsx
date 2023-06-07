@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FC, HTMLAttributes, useContext, useRef } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import { toast } from "react-hot-toast";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
 import { useMutation } from "@tanstack/react-query";
@@ -22,6 +21,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     formState: { errors },
     reset,
   } = useForm<FormDataChatInput>();
+  
   const { addMessage, setIsMessageUpdating, updateMessage, messages } =
     useContext(MessagesContext);
 
