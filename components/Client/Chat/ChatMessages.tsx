@@ -5,12 +5,11 @@ import { cn } from "../../../lib/class-name-utils";
 import { MessagesContext } from "./context/messages";
 import MarkdownLite from "./ChatMarkDownLite";
 
-import clsx from "clsx";
-
 interface ChatMessagesProps extends HTMLAttributes<HTMLDivElement> {}
 
 const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
   const { messages } = useContext(MessagesContext);
+
   console.log(messages);
 
   const inverseMessages = [...messages].reverse();
@@ -42,15 +41,16 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
                 )}
               >
                 <p
-                  className={cn("px-4 py-2 rounded-lg border-2", {
-                    "bg-blue-600 text-white": message.isUserMessage,
-                    "bg-gray-200 text-gray-900": !message.isUserMessage,
-                  })}
+                  className={`
+                    rounded-md
+                     ${
+                       message.isUserMessage
+                         ? "text-white bg-green-400"
+                         : "bg-blue text-white/80"
+                     }
+                  `}
                 >
-                  <MarkdownLite
-                    text={message.text}
-                    isUserMessage={message.isUserMessage}
-                  />
+                  <MarkdownLite text={message.text} />
                 </p>
               </div>
             </div>

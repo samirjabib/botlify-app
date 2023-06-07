@@ -96,7 +96,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           }}
           {...register("text")}
           autoFocus
-          ref={textareaRef}
           placeholder="Write a message..."
           className={clsx(
             "bg-grayLight shadow-2xl ",
