@@ -15,8 +15,8 @@ const LandingHero = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row w-full md:w-[50%] gap-x-3 gap-y-3 mt-8 sm:mt-16 justify-center md:justify-start">
-            <button className="flex-1 text-lg bg-blue rounded-md cursor-pointer text-white font-bold px-6 py-2 shadow-lg">
+          <div className="flex flex-col sm:flex-row w-full md:w-[50%]  gap-x-3 gap-y-3 mt-8 sm:mt-16 justify-center md:justify-start">
+            <button className="flex-1 text-lg bg-blue transition-all hover:bg-darkBlue rounded-md cursor-pointer text-white font-bold px-6 py-2 shadow-lg">
               Contactanos
             </button>
             <button className="flex-1  text-lg border-[0.5px] rounded-md border-white/30 cursor-pointer text-white font-extrabold px-6 py-2 shadow-lg">

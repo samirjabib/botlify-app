@@ -11,6 +11,7 @@ import {
 } from "../ui/Accordion";
 import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";
+import ChatInputTwo from "./ChatInputTwo";
 
 const Chat: FC = () => {
   return (
@@ -24,7 +25,8 @@ const Chat: FC = () => {
             <AccordionContent>
               <div className="flex flex-col h-80">
                 <ChatMessages className="px-2 py-3 flex-1" />
-                <ChatInput className="px-6" />
+                {/* <ChatInput className="px-6" /> */}
+                <ChatInputTwo className="px-6" />
               </div>
             </AccordionContent>
           </div>

@@ -2,12 +2,13 @@
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-
     extend: {
       colors:{
         blue:'#087ea4',
+        darkBlue:'022631',
         gray:'#23272f',
         darkGray:'#1c1f25',
+        lightGray:'#737477',
         grayBlack:'#16181d',
         grayLight:'#40414f'
       },

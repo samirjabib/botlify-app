@@ -1,15 +1,15 @@
 "use client";
 
 import { FC, HTMLAttributes, useContext } from "react";
-import { cn } from "../../../lib/class-name-utils";
 import { MessagesContext } from "./context/messages";
 import MarkdownLite from "./ChatMarkDownLite";
+import clsx from "clsx";
+import { cn } from "../../../lib/class-name-utils";
 
 interface ChatMessagesProps extends HTMLAttributes<HTMLDivElement> {}
 
 const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
   const { messages } = useContext(MessagesContext);
-
 
   const inverseMessages = [...messages].reverse();
 
@@ -26,17 +26,17 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
         return (
           <div className="chat-message" key={`${message.id}-${message.id}`}>
             <div
-              className={cn("flex items-end", {
-                "justify-end": message.isUserMessage,
-              })}
+              className={clsx(
+                "flex items-end",
+                message.isUserMessage ? "justify-end" : "justify-start"
+              )}
             >
               <div
-                className={cn(
+                className={clsx(
                   "flex flex-col space-y-2 text-sm max-w-xs mx-2 overflow-x-hidden",
-                  {
-                    "order-1 items-end": message.isUserMessage,
-                    "order-2 items-start": !message.isUserMessage,
-                  }
+                  message.isUserMessage
+                    ? "order-1 items-end"
+                    : "order-2 items-start"
                 )}
               >
                 <p
@@ -56,6 +56,7 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
           </div>
         );
       })}
+      
     </div>
   );
 };

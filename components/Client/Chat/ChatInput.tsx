@@ -7,6 +7,7 @@ import { useMutation } from "@tanstack/react-query";
 import { cn } from "../../../lib/class-name-utils";
 import { Message } from "../../../lib/validators/message";
 import { MessagesContext } from "./context/messages";
+import { CornerDownLeft, Loader2 } from "lucide-react";
 
 interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -89,7 +90,6 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     <div {...props} className={cn("py-4", className)}>
       <div className=" relative flex-1 overflow-hidden rounded-lg outline-none focus:outline-none ">
         <TextareaAutosize
-          ref={textareaRef}
           rows={2}
           maxRows={4}
           onKeyDown={(e) => {
@@ -98,7 +98,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
               handleSubmit(onSubmit)();
             }
           }}
-          {...register("text")}
+          {...register("text", {})}
           autoFocus
           placeholder="Write a message..."
           className={clsx(
@@ -107,6 +107,19 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
             "block w-full border outline-none border-darkGray text-white placeholder-white/60",
             "focus:outline-none text-sm sm:leading-6 py-1.5"
           )}
+        />
+        <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+          <kbd className="inline-flex items-center rounded  bg-green-500 shadow-lg border-gray-200 px-1 font-sans text-xs text-black font-bold">
+            {isLoading ? (
+              <Loader2 className="w-3 h-3 animate-spin" />
+            ) : (
+              <CornerDownLeft className="w-3 h-3" />
+            )}
+          </kbd>
+        </div>
+        <div
+          className="absolute inset-x-0 bottom-0 border-t border-blue"
+          aria-hidden="true"
         />
       </div>
     </div>

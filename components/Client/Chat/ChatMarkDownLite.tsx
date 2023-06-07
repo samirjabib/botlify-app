@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const MarkdownLite = ({ text }: { text: string }) => {
-  const linkRegex = /\[(.+?)\]\((.+?)\)/g;
+  const linkRegex = /\[(.+?)\]\((.+?)\)/g; // [linkText](linkUrl)
   const parts = [];
 
   let lastIndex = 0;
@@ -21,7 +21,7 @@ const MarkdownLite = ({ text }: { text: string }) => {
       <Link
         target="_blank"
         rel="noopener noreferrer"
-        className="break-words underline underline-offset-2 text-blue-600 border-2"
+        className="break-words underline underline-offset-2 text-blue-600"
         key={linkUrl}
         href={linkUrl}
       >
