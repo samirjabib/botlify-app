@@ -11,7 +11,7 @@ import {
 } from "../ui/Accordion";
 import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";
-import ChatInputTwo from "./ChatInputTwo";
+import ChatInputTwo from "./ChatInput";
 
 const Chat: FC = () => {
   return (
