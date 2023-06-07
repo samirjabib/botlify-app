@@ -4,7 +4,7 @@ const LandingHero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 relative mt-28 sm:mt-44">
         <div className=" col-span-1">
           <div className="flex flex-col items-center md:items-start">
-            <h1 className="text-white text-4xl sm:text-5xl font-bold mb-4 tracking-tighter max-w-[550px] text-center md:text-start">
+            <h1 className="text-white text-4xl sm:text-5xl font-extrabold mb-4 tracking-tighter max-w-[550px] text-center md:text-start">
               Impulsa tu negocio con bots inteligentes
             </h1>
             <p className="text-base sm:text-lg text-white/80 tracking-tighter  font-medium max-w-[550px] text-center md:text-start">

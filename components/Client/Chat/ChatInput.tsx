@@ -21,7 +21,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     formState: { errors },
     reset,
   } = useForm<FormDataChatInput>();
-  
+
   const { addMessage, setIsMessageUpdating, updateMessage, messages } =
     useContext(MessagesContext);
 
@@ -66,8 +66,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
         updateMessage(id, (prev) => prev + chunkValue);
       }
 
+      reset({ text: "" });
       setIsMessageUpdating(false);
-      reset();
 
       setTimeout(() => {
         textareaRef.current?.focus();
@@ -89,6 +89,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     <div {...props} className={cn("py-4", className)}>
       <div className=" relative flex-1 overflow-hidden rounded-lg outline-none focus:outline-none ">
         <TextareaAutosize
+          ref={textareaRef}
           rows={2}
           maxRows={4}
           onKeyDown={(e) => {
