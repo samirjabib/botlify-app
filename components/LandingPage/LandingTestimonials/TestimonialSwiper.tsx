@@ -29,21 +29,21 @@ export const TestimonialSwiper = () => {
 
   return (
     <Swiper
-      className="w-full  flex flex-col items-center "
+      className="w-full  flex flex-col items-center max-w-4xl"
       slidesPerView={1}
       onSlideChange={() => console.log("slide change")}
       ref={swiperRef}
     >
       {Array.from({ length: 3 }).map((_, i) => (
-        <SwiperSlide className=" w-full ">
+        <SwiperSlide className=" w-full " key={i}>
           <TestimonialItem />
         </SwiperSlide>
       ))}
       <div className="flex flex-row gap-x-4 justify-center items-center mt-8">
-        <button>
+        <button onClick={handleSlidePrev}>
           <MoveLeft className="text-white/60 text-base transition-all hover:text-white cursor-pointer" />
         </button>
-        <button>
+        <button onClick={handleSlideNext}>
           <MoveRight className="text-white/60 text-base transition-all hover:text-white cursor-pointer" />
         </button>
       </div>
