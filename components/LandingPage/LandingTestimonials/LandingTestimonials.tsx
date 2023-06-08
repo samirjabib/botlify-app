@@ -1,3 +1,5 @@
+import TestimonialsMarquee from "./TestimonialsMarquee";
+
 const LandingTestimonials = () => {
   return (
     <div className="bg-gray w-full pt-12 pb-20 ">
@@ -5,12 +7,9 @@ const LandingTestimonials = () => {
         ¡Descubre los testimonios de nuestros clientes satisfechos y únete a
         ellos!
       </h2>
-      <div className="flex flex-row w-full wrapper gap-4">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <div className="w-full border-2 bg-yellow-500 h-80">
-            <div></div>
-          </div>
-        ))}
+
+      <div className="w-full  ">
+        <TestimonialsMarquee />
       </div>
     </div>
   );
