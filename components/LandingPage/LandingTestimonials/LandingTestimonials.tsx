@@ -1,3 +1,4 @@
+import TestimonialSwiper from "./TestimonialSwiper";
 import TestimonialsMarquee from "./TestimonialsMarquee";
 
 const LandingTestimonials = () => {
@@ -9,7 +10,8 @@ const LandingTestimonials = () => {
       </h2>
 
       <div className="w-full  ">
-        <TestimonialsMarquee />
+        {/* <TestimonialsMarquee /> */}
+        <TestimonialSwiper />
       </div>
     </div>
   );
