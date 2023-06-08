@@ -50,8 +50,8 @@ const FirstRowBenefits = () => {
           </li>
         </ul>
       </div>
-      <div className="w-1/2">
-        <div className="h-80 bg-yellow-500 w-3/4" />
+      <div className="w-1/2 ">
+        <div className="h-80 bg-yellow-500 w-3/4 rounded-md shadow-lg" />
       </div>
     </div>
   );

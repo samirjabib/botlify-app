@@ -3,7 +3,7 @@ import TestimonialsMarquee from "./TestimonialsMarquee";
 
 const LandingTestimonials = () => {
   return (
-    <div className="bg-gray w-full py-20 ">
+    <div className="bg-gray w-full py-32 ">
       <p className="text-white/60 text-sm text-center font-bold  mx-auto uppercase mb-2">
         Que dicen de botlify
       </p>
