@@ -1,2 +1,5 @@
 export * from './fonts';
-export * from './index';
+
+
+
+export { default as FloatingInput } from './elements/FloatingInput/FloatingInput';
