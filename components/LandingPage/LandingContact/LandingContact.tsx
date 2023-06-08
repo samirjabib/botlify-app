@@ -1,7 +1,7 @@
 const LandingContact = () => {
   return (
     <div className="bg-darkGray w-full py-12">
-      <div className="grid grid-cols-2 wrapper justify-center ">
+      <div className="grid grid-cols-2 wrapper justify-center space-x-12">
         {/* text-box first row */}
         <div className="col-span-1 border-green-500 border-2">
           <button>Contactanos</button>
