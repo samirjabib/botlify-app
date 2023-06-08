@@ -24,7 +24,7 @@ const LandingHero = () => {
             </button>
           </div>
         </div>
-        <div className=" col-span-1 mt-12 sm:mt-8 md:mt-0 w-full border-4 border-white/20 shadow-2xl rounded-md ">
+        <div className=" col-span-1 mt-12 sm:mt-8 md:mt-0 w-full  rounded-md  flex justify-center sm:justify-end">
           {/* <video
             src="https://res.cloudinary.com/dnoeqtok8/video/upload/v1686005187/uhpp2eiegurrimn7sfyi.mp4"
             autoPlay
@@ -32,7 +32,7 @@ const LandingHero = () => {
             muted
             className="w-full object-cover  h-full"
           /> */}
-          <div className="w-full h-full bg-yellow-500" />
+          <div className="w-[70%] h-80 sm:h-full bg-yellow-500" />
         </div>
       </div>
     </div>
