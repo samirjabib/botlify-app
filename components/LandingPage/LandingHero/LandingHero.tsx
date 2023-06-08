@@ -25,13 +25,14 @@ const LandingHero = () => {
           </div>
         </div>
         <div className=" col-span-1 mt-12 sm:mt-8 md:mt-0 w-full border-4 border-white/20 shadow-2xl rounded-md ">
-          <video
+          {/* <video
             src="https://res.cloudinary.com/dnoeqtok8/video/upload/v1686005187/uhpp2eiegurrimn7sfyi.mp4"
             autoPlay
             loop
             muted
             className="w-full object-cover  h-full"
-          />
+          /> */}
+          <div className="w-full h-full bg-yellow-500" />
         </div>
       </div>
     </div>
