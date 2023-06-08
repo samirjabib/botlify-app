@@ -1,5 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,18 +14,12 @@ export const TestimonialSwiper = () => {
   const swiper = useSwiper();
 
   const handleSlideNext = () => {
-    if (swiper && swiper.slideNext) {
-      console.log("click preview");
-
-      swiper.slideNext();
-    }
+    //todo make swiper functionality
+    console.log("click next");
   };
 
   const handleSlidePrev = () => {
-    if (swiper && swiper.slidePrev) {
-      console.log("click next");
-      swiper.slidePrev();
-    }
+    console.log("click prev");
   };
 
   return (

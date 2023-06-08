@@ -10,7 +10,6 @@ const LandingTestimonials = () => {
       </h2>
 
       <div className="w-full  ">
-        {/* <TestimonialsMarquee /> */}
         <TestimonialSwiper />
       </div>
     </div>
