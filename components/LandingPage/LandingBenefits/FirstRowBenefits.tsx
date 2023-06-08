@@ -2,6 +2,9 @@ const FirstRowBenefits = () => {
   return (
     <div className="w-full flex flex-col items-center sm:flex-row py-24 border-2-border-red-500">
       <div className="w-full sm:w-[50%]">
+        <p className="text-white/60 text-sm text-start font-bold  mx-auto uppercase mb-2">
+          Obten estos beneficios
+        </p>
         <h3 className=" font-semibold text-3xl mb-4 tracking-tighter max-w-xl pr-4">
           Multiplica tu productividad y ahorra tiempo con nuestra solución de
           automatización
