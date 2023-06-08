@@ -46,21 +46,21 @@ const LandingBenefits = () => {
           <div className="h-80 bg-yellow-500 w-96" />
         </div>
       </div>
-      <div className="w-full flex flex-col items-center sm:flex-row py-24 ">
+      <div className="w-full flex flex-col sm:flex-row py-24 ">
         <div className="w-1/2">
           <div className="h-80 bg-yellow-500 w-3/4" />
         </div>
         <div className="w-full sm:w-1/2 flex flex-col">
-          <h3 className="text-start w-full font-semibold text-3xl mb-4">
+          <h3 className="text-start w-full font-semibold text-3xl mb-4 max-w-xl pr-2">
             Maximiza tus ventas y potencia tu negocio con la integración de tu
             bot en WhatsApp y tu landing page
           </h3>
-          <p className="text-white/80 text-base">
+          <p className="text-white/80 text-base max-w-xl pr-2 mb-4">
             Descubre cómo puedes mejorar la eficiencia y la interacción con tus
             clientes al integrar estratégicamente tu bot en WhatsApp y en tu
             Landing Page. Con nuestra solución de automatización, podrás:
           </p>
-          <ul className="text-white/80  text-base tracking-tighter flex flex-col gap-y-2 max-w-lg">
+          <ul className="text-white/80  text-base tracking-tighter flex flex-col gap-y-2 max-w-xl pr-2">
             <div className="flex flex-row mr-2">
               <BadgeCheck className="w-8 h-8 mr-4 text-blue" />
               <li>
