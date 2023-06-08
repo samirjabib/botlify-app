@@ -10,11 +10,10 @@ const Header = () => {
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
       <div className="wrapper  flex justify-between h-full items-center">
-        <div className="flex flex-row items-center gap-x-2 font-extrabold">
-          <span className="text-white border-2 border-white">Logo</span>
+        <div className="flex flex-row items-center gap-x-2 font-extrabold text-2xl">
           <h2 className="text-white">
-            Chat
-            <span className="text-blue">Bot</span>
+            Bot
+            <span className="text-blue">lify</span>
           </h2>
         </div>
 
