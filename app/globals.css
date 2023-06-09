@@ -28,6 +28,10 @@
     @apply mx-auto px-8 xl:container;
   }
 
+  .sub-title {
+    @apply text-white/60 text-sm font-bold uppercase
+  }
+
 }
 
 @layer components {

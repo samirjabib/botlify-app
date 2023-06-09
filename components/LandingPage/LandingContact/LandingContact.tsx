@@ -1,37 +1,40 @@
 import { FloatingInput } from "../../../design-system";
+import { Textarea } from "../../Client/ui/textarea";
 
 const LandingContact = () => {
   return (
     <div className="bg-darkGray w-full py-12">
       <div className="grid grid-cols-2 wrapper justify-center space-x-12">
         {/* text-box first row */}
-        <div className="col-span-1 border-green-500 border-2 px-8">
-          <button>Contactanos</button>
-          <div>
-            <h2 className="text-white">
-              Amplifica tu éxito comercial: Potencia tus ventas con nuestra
-              solución avanzada
-            </h2>
-            <p className="text-white/80">
-              Automatización potente y mayor satisfacción del cliente con
-              nuestro chatbot inteligente.
-            </p>
-          </div>
-
-          <div>
-            <p className="text-white/80 text-start text-sm ">
-              "El bot para mi tienda de comercio electrónico ha sido
-              transformador. Mejoró la interacción con los clientes, impulsó las
-              ventas y automatizó tareas. ¡Lo recomiendo ampliamente para
-              mejorar cualquier negocio en línea!"
-            </p>
-            <div className="flex flex-row gap-x-2   justify-start">
-              <div className="h-8 w-8 bg-yellow-500 rounded-full" />
-              <h3 className="text-white/80">Samir Jabib</h3>
-              <div className="h-3  border border-white/60" />
-              <p className=" text-white/60 text-sm">
-                Propietario de E-commerce
+        <div className="col-span-1   px-8 ">
+          <div className="w-full max-w-lg">
+            <h3 className="sub-title mb-2">Contacto</h3>
+            <div>
+              <h2 className="text-white text-3xl mb-4 font-bold ">
+                Amplifica tu éxito comercial: Potencia tus ventas con nuestra
+                solución avanzada
+              </h2>
+              <p className="text-white/80 text-base pr-10">
+                Automatización potente y mayor satisfacción del cliente con
+                nuestro chatbot inteligente.
               </p>
+            </div>
+
+            <div className="mt-80">
+              <p className="text-white/80 text-start text-sm mb-4 ">
+                "El bot para mi tienda de comercio electrónico ha sido
+                transformador. Mejoró la interacción con los clientes, impulsó
+                las ventas y automatizó tareas. ¡Lo recomiendo ampliamente para
+                mejorar cualquier negocio en línea!"
+              </p>
+              <div className="flex flex-row gap-x-2  items-center justify-start">
+                <div className="h-12 w-12 bg-yellow-500 rounded-full" />
+                <h3 className="text-white/80">Samir Jabib</h3>
+                <div className="h-3  border border-white/60" />
+                <p className=" text-white/60 text-sm">
+                  Propietario de E-commerce
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -41,6 +44,7 @@ const LandingContact = () => {
             <FloatingInput />
             <FloatingInput />
             <FloatingInput />
+            <Textarea />
             <button>Enviar</button>
           </form>
         </div>
