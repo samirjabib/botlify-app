@@ -1,4 +1,5 @@
 import { FloatingInput } from "../../../design-system";
+import { Textarea } from "../../ui/textarea";
 
 const ContactForm = () => {
   return (
@@ -7,7 +8,7 @@ const ContactForm = () => {
         <FloatingInput />
         <FloatingInput />
         <FloatingInput />
-        {/* <Textarea /> */}
+        <Textarea />
         <button>Enviar</button>
       </form>
     </div>
