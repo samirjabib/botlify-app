@@ -16,33 +16,35 @@ const FirstRowBenefits = () => {
         </p>
         <ul className="text-white/80 list-disc pl-4 text-base tracking-tighter flex flex-col gap-y-2 max-w-xl pr-12">
           <li>
-            <span className="text-green-500 font-semibold uppercase">
+            <span className="text-green-500 font-semibold uppercase text-lg">
               Aumenta
             </span>{" "}
             la productividad y eficiencia operativa al eliminar tareas
             repetitivas y tediosas.
           </li>
           <li>
-            <span className="text-green-500 font-semibold uppercase">
+            <span className="text-green-500 font-semibold uppercase text-lg">
               Optimiza
             </span>{" "}
             la asignación inteligente de recursos al identificar y eliminar
             ineficiencias en la distribución de tareas.
           </li>
           <li>
-            <span className="text-green-500 font-semibold uppercase">
+            <span className="text-green-500 font-semibold uppercase text-lg">
               Minimiza
             </span>{" "}
             errores y evita retrabajos innecesarios al implementar flujos de
             trabajo automatizados y controles de calidad.
           </li>
           <li>
-            <span className="text-green-500 font-semibold uppercase">Gana</span>{" "}
+            <span className="text-green-500 font-semibold uppercase text-lg">
+              Gana
+            </span>{" "}
             tiempo para centrarte en tareas estratégicas y de mayor valor que
             impulsen el crecimiento de tu negocio.
           </li>
           <li>
-            <span className="text-green-500 font-semibold uppercase">
+            <span className="text-green-500 font-semibold uppercase text-lg">
               Mejora
             </span>{" "}
             la precisión y consistencia de tus procesos al reducir la
