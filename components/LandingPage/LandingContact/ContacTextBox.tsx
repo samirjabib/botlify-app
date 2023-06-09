@@ -1,6 +1,6 @@
 const ContactTextBox = () => {
   return (
-    <div className="col-span-1   px-8 ">
+    <div className="col-span-1    ">
       <div className="w-full max-w-lg">
         <h3 className="sub-title mb-2">Contacto</h3>
         <div>

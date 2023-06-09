@@ -55,6 +55,7 @@ const ContactForm = () => {
           <Textarea className="bg-grayLight" rows={8} />
         </div>
         <button className="w-full bg-blue">Enviar</button>
+        <p>* Nunca compartiremos tu informacion con terceros.</p>
       </form>
     </div>
   );
