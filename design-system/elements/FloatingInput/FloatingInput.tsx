@@ -17,11 +17,11 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
   required,
   ...inputProps
 }) => {
-  const classBase = "";
+  const classBase = "w-full bg-grayLight rounded-md px-4 py-2 text-white ";
 
-  const classBaseLabel = "";
+  const classBaseLabel = "text-white text-sm font-semibold";
   return (
-    <div className="relative z-0 mb-6">
+    <div className="flex flex-col ">
       <label htmlFor={id} className={cn(classBaseLabel, classNameLabel)}>
         {placeholder}
       </label>
