@@ -25,13 +25,17 @@ const ContactForm = () => {
     <div className="col-span-1  w-full  flex justify-center">
       <form
         className="bg-gray shadow-2xl px-7 py-8 w-full max-w-lg "
-        onSubmit={handleSubmit(onSubmit)}
+        // onSubmit={handleSubmit(onSubmit)}
       >
-        <FloatingInput {...register("name")} />
-        <FloatingInput {...register("email")} />
-        <FloatingInput {...register("phone")} />
-
-        <Textarea {...register("message")} />
+        <FloatingInput
+          type="text"
+          placeholder="Name"
+          label="Name"
+          htmlFor="name"
+        />
+        <FloatingInput />
+        <FloatingInput />
+        <Textarea />
         <button>Enviar</button>
       </form>
     </div>
