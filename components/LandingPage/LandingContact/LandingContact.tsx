@@ -28,7 +28,7 @@ const LandingContact = () => {
                 mejorar cualquier negocio en línea!"
               </p>
               <div className="flex flex-row gap-x-2  items-center justify-start">
-                <div className="h-12 w-12 bg-yellow-500 rounded-full" />
+                <div className="h-12 w-12 rounded-full" />
                 <h3 className="text-white/80">Samir Jabib</h3>
                 <div className="h-3  border border-white/60" />
                 <p className=" text-white/60 text-sm">
@@ -39,8 +39,8 @@ const LandingContact = () => {
           </div>
         </div>
         {/* form second col */}
-        <div className="col-span-1  w-full border-yellow-500 border-2 flex justify-center">
-          <form className="bg-gray shadow-lg px-4 py-8 w-full max-w-lg ">
+        <div className="col-span-1  w-full  flex justify-center">
+          <form className="bg-gray shadow-2xl px-7 py-8 w-full max-w-lg ">
             <FloatingInput />
             <FloatingInput />
             <FloatingInput />
