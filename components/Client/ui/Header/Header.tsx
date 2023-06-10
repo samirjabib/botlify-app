@@ -9,8 +9,8 @@ const Header = () => {
 
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
-      <div className="wrapper flex justify-between h-full items-center">
-        <div className="flex flex-row items-center gap-x-2 font-extrabold text-2xl">
+      <div className="wrapper flex justify-between h-full items-center ">
+        <div className="flex flex-row items-center gap-x-2 font-extrabold text-2xl ">
           <h2 className="text-white">
             Bot
             <span className="text-blue">lify</span>
@@ -18,7 +18,7 @@ const Header = () => {
         </div>
 
         <nav className="max-w-xl w-full">
-          <ul className="flex flex-row items-center justify-end h-full text-white gap-x-8 ">
+          <ul className="flex flex-row items-center justify-end h-full text-white gap-x-8 cursor-pointer ">
             <li className="relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
               <a>Home</a>
             </li>
