@@ -79,7 +79,17 @@
 }
 
 @layer components {
-  
+  .main-button {
+    @apply bg-blue transition-all hover:bg-hoverBlue rounded-full cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
+
+  .secundary-button {
+    @apply border-[0.5px] rounded-full border-white/20 transition-all hover:bg-white/10 cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
+
+  .terciary-button {
+    @apply bg-transparent border border-transparent rounded-full cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
 }
 
 
