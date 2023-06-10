@@ -48,14 +48,18 @@ const ContactForm = () => {
           htmlFor="phone"
           className="mb-4"
         />
-        <div className="mb-2">
-          <label htmlFor="message" className="text-white text-sm font-bold">
+        <div className="mb-4">
+          <label htmlFor="message" className="text-white/80 tracking-tighter text-sm font-bold">
             Message
           </label>
           <Textarea className="bg-grayLight" rows={8} />
         </div>
-        <button className="w-full bg-blue">Enviar</button>
-        <p>* Nunca compartiremos tu informacion con terceros.</p>
+        <button className="w-full bg-blue px-2 py-2 rounded-md font-bold text-white">
+          Enviar
+        </button>
+        <p className="text-white/60 text-xs mt-4 font-light">
+          * Nunca compartiremos tu informacion con terceros.
+        </p>
       </form>
     </div>
   );

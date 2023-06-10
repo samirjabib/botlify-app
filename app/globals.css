@@ -28,10 +28,54 @@
     @apply mx-auto px-8 xl:container;
   }
 
-  .sub-title {
+
+
+  /************************************+ Typografy config ********************************************/
+
+
+  /* Headers */
+  .main-title {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
+  }
+
+  .section-title {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0
+  }
+
+  .section-subtitle {
     @apply text-white/60 text-sm font-bold uppercase
   }
 
+  .text-title { 
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight
+  }
+
+  .text-subtitle {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight
+  }
+
+  
+
+  /* Text */
+  .text {
+    @apply leading-7 [&:not(:first-child)]:mt-6
+  }
+  
+  .small-text {
+    @apply text-sm font-medium leading-none
+  }
+  .text-quote {
+    @apply mt-6 border-l-2 pl-6 italic
+  }
+
+  .text-list {
+    @apply @applymy-6 ml-6 list-disc [&>li]:mt-2
+  }
+
+
+  .text-muted {
+    @apply text-sm text-muted-foreground
+  }
 }
 
 @layer components {
