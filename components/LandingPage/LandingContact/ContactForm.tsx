@@ -22,9 +22,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="col-span-1  w-full border-2 border-red-500 flex justify-end">
+    <div className="col-span-1  w-full flex justify-end">
       <form
-        className="bg-gray shadow-2xl px-7 py-8 w-full max-w-lg border-2 border-red-500 "
+        className="bg-gray shadow-2xl px-7 py-8 w-full  max-w-xl  "
         // onSubmit={handleSubmit(onSubmit)}
       >
         <FloatingInput
