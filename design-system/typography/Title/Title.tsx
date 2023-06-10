@@ -15,7 +15,7 @@ const title = cva("", {
       textTitle: ["text-title"],
       sectionSubtitle: ["section-subtitle"],
       sectionTitle: ["section-title"],
-      mainTitle: [" main-title"],
+      mainTitle: ["main-title"],
     },
     family: {
       display: ["font-display"],
@@ -35,7 +35,7 @@ interface TitleProps
   as?: HeadingLevel;
 }
 
-export const Title: FC<TitleProps> = ({
+const Title: FC<TitleProps> = ({
   as: Component = "h2",
   className,
   intent,
@@ -47,3 +47,5 @@ export const Title: FC<TitleProps> = ({
 
   return <Component className={classNames} {...props} />;
 };
+
+export default Title;

@@ -1,10 +1,17 @@
+import { Title } from "../../../design-system";
+
 const HeroTextBox = () => {
   return (
     <div className=" col-span-1 ">
       <div className="flex flex-col items-center md:items-start">
-        <h1 className="text-white text-4xl sm:text-5xl font-extrabold mb-4 tracking-tighter max-w-[550px] text-center md:text-start">
+        <Title
+          className="max-w-[550px] text-white mb-4"
+          intent={"primary"}
+          size={"mainTitle"}
+          as="h1"
+        >
           Impulsa tu negocio con bots inteligentes
-        </h1>
+        </Title>
         <p className="text-base sm:text-lg text-white/80 tracking-tighter  font-medium max-w-[550px] text-center md:text-start">
           Aumenta la productividad y mejora tu servicio con nuestros bots
           inteligentes. Automatiza tareas, optimiza recursos y alcanza
