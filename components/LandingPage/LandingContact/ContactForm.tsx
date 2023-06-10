@@ -57,9 +57,7 @@ const ContactForm = () => {
           </label>
           <Textarea className="bg-grayLight" rows={8} />
         </div>
-        <button className="w-full bg-blue px-2 py-2 rounded-full font-bold text-white">
-          Enviar
-        </button>
+        <button className="w-full main-button text-white">Enviar</button>
         <p className="text-white/60 text-xs mt-4 font-light">
           * Nunca compartiremos tu informacion con terceros.
         </p>
