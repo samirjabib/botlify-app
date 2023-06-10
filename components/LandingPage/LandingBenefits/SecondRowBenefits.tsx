@@ -3,10 +3,10 @@ import { BadgeCheck } from "lucide-react";
 const SecondRowBenefits = () => {
   return (
     <div className="w-full flex flex-col sm:flex-row py-24 ">
-      <div className="w-1/2  ">
-        <div className="h-80 bg-yellow-500 w-3/4 rounded-md shadow-lg" />
+      <div className="w-1/2">
+        <div className="h-full bg-yellow-500 rounded-md shadow-lg max-w-xl " />
       </div>
-      <div className="w-full sm:w-1/2 flex flex-col">
+      <div className="w-full sm:w-1/2 flex flex-col items-end">
         <h3 className="text-start w-full font-semibold text-3xl mb-4 max-w-xl pr-2">
           Maximiza tus ventas y potencia tu negocio con la integración de tu bot
           en WhatsApp y tu landing page

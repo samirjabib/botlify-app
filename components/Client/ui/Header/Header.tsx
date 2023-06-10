@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
-      <div className="wrapper  flex justify-between h-full items-center">
+      <div className="wrapper flex justify-between h-full items-center">
         <div className="flex flex-row items-center gap-x-2 font-extrabold text-2xl">
           <h2 className="text-white">
             Bot
@@ -17,8 +17,8 @@ const Header = () => {
           </h2>
         </div>
 
-        <nav className="">
-          <ul className="flex flex-row items-center justify-center h-full gap-x-6 text-white ">
+        <nav className="max-w-xl w-full">
+          <ul className="flex flex-row items-center justify-end h-full text-white gap-x-8 ">
             <li className="relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
               <a>Home</a>
             </li>
@@ -28,9 +28,9 @@ const Header = () => {
             <li className="relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
               <a>Sobre Nosotros</a>
             </li>
-            <li className="relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
-              <a>Contacto</a>
-            </li>
+            <button className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full">
+              <a className="">Contacto</a>
+            </button>
           </ul>
         </nav>
         <Dialog

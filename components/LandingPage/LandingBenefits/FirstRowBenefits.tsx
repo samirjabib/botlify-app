@@ -1,6 +1,6 @@
 const FirstRowBenefits = () => {
   return (
-    <div className="w-full flex flex-col items-center sm:flex-row py-24 border-2-border-red-500">
+    <div className="w-full flex flex-col  sm:flex-row py-24 ">
       <div className="w-full sm:w-[50%]">
         <p className="text-white/60 text-sm text-start font-bold  mx-auto uppercase mb-2">
           Obten estos beneficios
@@ -52,8 +52,8 @@ const FirstRowBenefits = () => {
           </li>
         </ul>
       </div>
-      <div className="w-1/2 ">
-        <div className="h-80 bg-yellow-500 w-3/4 rounded-md shadow-lg" />
+      <div className="w-1/2 flex justify-end ">
+        <div className="h-full bg-yellow-500 max-w-xl w-full rounded-md shadow-lg" />
       </div>
     </div>
   );

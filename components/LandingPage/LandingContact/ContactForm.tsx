@@ -22,9 +22,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="col-span-1  w-full  flex justify-start">
+    <div className="col-span-1  w-full border-2 border-red-500 flex justify-end">
       <form
-        className="bg-gray shadow-2xl px-7 py-8 w-full max-w-lg  "
+        className="bg-gray shadow-2xl px-7 py-8 w-full max-w-lg border-2 border-red-500 "
         // onSubmit={handleSubmit(onSubmit)}
       >
         <FloatingInput
@@ -49,12 +49,15 @@ const ContactForm = () => {
           className="mb-4"
         />
         <div className="mb-4">
-          <label htmlFor="message" className="text-white/80 tracking-tighter text-sm font-bold">
+          <label
+            htmlFor="message"
+            className="text-white/80 tracking-tighter text-sm font-bold"
+          >
             Message
           </label>
           <Textarea className="bg-grayLight" rows={8} />
         </div>
-        <button className="w-full bg-blue px-2 py-2 rounded-md font-bold text-white">
+        <button className="w-full bg-blue px-2 py-2 rounded-full font-bold text-white">
           Enviar
         </button>
         <p className="text-white/60 text-xs mt-4 font-light">

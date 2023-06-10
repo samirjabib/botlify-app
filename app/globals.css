@@ -25,7 +25,7 @@
   }
 
   .wrapper {
-    @apply mx-auto px-8 xl:container;
+    @apply mx-auto px-16 xl:container;
   }
 
 
