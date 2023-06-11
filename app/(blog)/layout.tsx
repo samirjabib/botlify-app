@@ -1,5 +1,3 @@
-import "./globals.css";
-
 export const metadata = {
   title: "Blog ChatBot | Information about ChatBot",
   description: "get your chatbox",
