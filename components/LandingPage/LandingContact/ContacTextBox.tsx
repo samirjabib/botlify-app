@@ -2,7 +2,7 @@ const ContactTextBox = () => {
   return (
     <div className="col-span-1    ">
       <div className="w-full max-w-lg">
-        <h3 className="sub-title mb-2">Contacto</h3>
+        <h3 className="section-subtitle mb-2 text-white/60">Contacto</h3>
         <div>
           <h2 className="text-white text-3xl mb-4 font-bold tracking-tighter">
             Amplifica tu éxito comercial: Potencia tus ventas con nuestra
