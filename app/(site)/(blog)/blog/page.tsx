@@ -1,6 +1,6 @@
-import { Title } from "../../../../design-system";
+import { Title } from "@/design-system/index";
 
-export default async function ArticlePage() {
+export default async function BlogPage() {
   return (
     <div>
       <Title as="h1" intent={"primary"} size={"mainTitle"}>

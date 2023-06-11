@@ -1,4 +1,4 @@
-import { Title } from "../../../design-system";
+import { Title } from "@/design-system/index";
 
 export default async function ServicePage() {
   return (
