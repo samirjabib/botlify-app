@@ -1,7 +1,4 @@
 import {defineType} from 'sanity'
-import landingHero from './landingHero/landingHero';
-
-
 
 export default defineType({
     name: 'landingPage',
@@ -10,8 +7,72 @@ export default defineType({
     fields: [
       {
         name:'landingHero',
+        type:'document',
         title:'Landing Hero',
-        type:'landingHero'
-      }
+        fields:[
+          {
+            name:'tileHeroBox',
+            type:'string',
+            title:'Title Hero Box',
+            validation: (Rule) => Rule.required(),
+          },
+          {
+            name:'contentHeroBox',
+            type:'text',
+            title:'Content Hero Box',
+            validation: (Rule) => Rule.required(),
+          },
+          {
+            name:'contactButtonText',
+            type:'string',
+            title:'Contact Button Text',
+            validation: (Rule) => Rule.required(),
+
+          },
+          {
+            name:'servicesButtonText',
+            type:'string',
+            title:'Services Button Text',
+            validation: (Rule) => Rule.required(),
+
+          },
+          {
+            name:'imageHeroBox',
+            type:'image',
+            title:'Image Hero Box',
+            options:{
+              hotspot:true,
+            }
+            
+          },
+        ]
+      },
+      {
+        name:'landingServices',
+        type:'document',
+        title:'Landing Services',
+        fields:[
+          {
+            name:'titleServices',
+            type:'string',
+            title:'Title Services',
+            validation: (Rule) => Rule.required(),
+
+          },
+          {
+            name:'subtitleServices',
+            type:'string',
+            title:'Subtitle Services',
+            validation: (Rule) => Rule.required(),
+          },
+          {
+            name:'contentServices',
+            type:'array',
+            title:'Content Services',
+            of:[{type:'object'}],
+            
+          }
+        ]
+      },
     ],
   })
