@@ -3,6 +3,7 @@ import {defineType} from 'sanity'
 export default defineType({
     name: 'landingPage',
     title: 'Landing Page',
+    description:'CMS for landingpage',
     type: 'document',
     fields: [
       {
@@ -40,10 +41,10 @@ export default defineType({
             name:'imageHeroBox',
             type:'image',
             title:'Image Hero Box',
+            validation: (Rule) => Rule.required(),
             options:{
               hotspot:true,
             }
-            
           },
         ]
       },
@@ -65,13 +66,7 @@ export default defineType({
             title:'Subtitle Services',
             validation: (Rule) => Rule.required(),
           },
-          {
-            name:'contentServices',
-            type:'array',
-            title:'Content Services',
-            of:[{type:'object'}],
-            
-          }
+       
         ]
       },
     ],

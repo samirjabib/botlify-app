@@ -1,9 +1,9 @@
 import SanityClient from 'next-sanity-client';
 
 const client = new SanityClient({
-  projectId: 'YOUR_PROJECT_ID',
-  dataset: 'YOUR_DATASET',
-  useCdn: process.env.NODE_ENV === 'production',
+  projectId: 'hhr2h2ag',
+  dataset: 'production',
+  useCdn: true,
 });
 
 export default client;
