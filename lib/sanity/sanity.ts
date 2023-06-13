@@ -1,9 +1,22 @@
-import SanityClient from 'next-sanity-client';
+import { ClientConfig, createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url'
 
-const client = new SanityClient({
+
+const config: ClientConfig = {
   projectId: 'hhr2h2ag',
   dataset: 'production',
-  useCdn: true,
-});
+  useCdn: true, // set to `false` to bypass the edge cache
+  apiVersion: '2023-06-12', // use current date (YYYY-MM-DD) to target the latest API version
+}
 
-export default client;
+const sanityClient = createClient(config)
+
+const builder = imageUrlBuilder({
+  projectId: '2j4chg3c',
+  dataset: 'production',
+})
+
+export const urlFor = (source: any) => builder.image(source)
+
+
+export default sanityClient;
