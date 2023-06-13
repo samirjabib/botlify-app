@@ -1,22 +1,23 @@
-import { ClientConfig, createClient } from '@sanity/client'
-import imageUrlBuilder from '@sanity/image-url'
+import {createClient,ClientConfig} from 'next-sanity'
+import { cache } from 'react'
 
+
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET 
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION 
 
 const config: ClientConfig = {
-  projectId: 'hhr2h2ag',
-  dataset: 'production',
+  projectId,
+  dataset,
   useCdn: true, // set to `false` to bypass the edge cache
-  apiVersion: '2023-06-12', // use current date (YYYY-MM-DD) to target the latest API version
+  apiVersion
 }
 
 const sanityClient = createClient(config)
 
-const builder = imageUrlBuilder({
-  projectId: '2j4chg3c',
-  dataset: 'production',
-})
-
-export const urlFor = (source: any) => builder.image(source)
+// Wrap the cache function in a way that reuses the TypeScript definitions
+const clientFetch = cache(sanityClient.fetch.bind(sanityClient))
 
 
-export default sanityClient;
+
+export default clientFetch;

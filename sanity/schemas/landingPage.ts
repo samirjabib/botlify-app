@@ -1,7 +1,7 @@
 import { defineType } from 'sanity'
 
 export default defineType({
-  name: 'landingPage',
+  name: 'landingPageRecord',
   title: 'Landing Page',
   type: 'document',
   fields: [
