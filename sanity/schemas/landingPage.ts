@@ -3,13 +3,13 @@ import {defineType} from 'sanity'
 export default defineType({
     name: 'landingPage',
     title: 'Landing Page',
-    description:'CMS for landingpage',
     type: 'document',
     fields: [
       {
         name:'landingHero',
         type:'document',
         title:'Landing Hero',
+        
         fields:[
           {
             name:'tileHeroBox',
