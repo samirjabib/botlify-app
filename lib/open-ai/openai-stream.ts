@@ -42,7 +42,6 @@ export async function OpenAIStreamPayload(payload:OpenAIStreamPayload){
     body: JSON.stringify(payload),
   });
 
-  console.log(response,'  this is the response')
 
   
 

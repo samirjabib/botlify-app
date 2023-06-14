@@ -60,5 +60,37 @@ export default defineType({
       title: 'Subtitle Services',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      title: 'servicesContent',
+      name: 'Services Content',
+      type: 'array',
+      of: [
+        {
+          title: 'Address',
+          name: 'address',
+          type: 'object',
+          fields: [
+            {
+              name: 'icon',
+              title: 'Icon',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+            },
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+            },
+          ],
+        },
+      ],
+    }),
   ],
 })
