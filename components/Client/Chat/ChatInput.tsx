@@ -16,6 +16,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   
   const [input, setInput] = useState<string>("");
+  
   const {
     messages,
     addMessage,

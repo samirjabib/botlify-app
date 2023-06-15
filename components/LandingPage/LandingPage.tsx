@@ -11,10 +11,9 @@ type LandingPageProps = {
 };
 
 const LandingPage = ({ content }: LandingPageProps) => {
-  console.log(content);
   return (
     <div className="w-full">
-      <LandingHero />
+      <LandingHero content={content} />
       <LandingServices />
       <LandingBenefits />
       <LandingTestimonials />

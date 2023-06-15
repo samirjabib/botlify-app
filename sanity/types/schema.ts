@@ -45,58 +45,81 @@ export interface LandingPageRecord extends SanityDocument {
   _type: "landingPageRecord";
 
   /**
-   * Title Hero Box — `string`
+   * Landing Hero — `object`
    *
    *
    */
-  titleHeroBox?: string;
+  landingHero?: {
+    _type: "landingHero";
+    /**
+     * Slug — `slug`
+     *
+     *
+     */
+    slug?: { _type: "slug"; current: string };
 
-  /**
-   * Content Hero Box — `text`
-   *
-   *
-   */
-  contentHeroBox?: string;
+    /**
+     * Title Hero Box — `string`
+     *
+     *
+     */
+    titleHeroBox?: string;
 
-  /**
-   * Contact Button Text — `string`
-   *
-   *
-   */
-  contactButtonText?: string;
+    /**
+     * Content Hero Box — `text`
+     *
+     *
+     */
+    contentHeroBox?: string;
 
-  /**
-   * Services Button Text — `string`
-   *
-   *
-   */
-  servicesButtonText?: string;
+    /**
+     * Contact Button Text — `string`
+     *
+     *
+     */
+    contactButtonText?: string;
 
-  /**
-   * Image Hero Box — `image`
-   *
-   *
-   */
-  imageHeroBox?: {
-    _type: "image";
-    asset: SanityReference<SanityImageAsset>;
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
+    /**
+     * Services Button Text — `string`
+     *
+     *
+     */
+    servicesButtonText?: string;
+
+    /**
+     * Image Hero Box — `image`
+     *
+     *
+     */
+    imageHeroBox?: {
+      _type: "image";
+      asset: SanityReference<SanityImageAsset>;
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
   };
 
   /**
-   * Title Services — `string`
+   * Landing Services — `object`
    *
    *
    */
-  titleServices?: string;
+  landingServices?: {
+    _type: "landingServices";
+    /**
+     * Title Services — `string`
+     *
+     *
+     */
+    titleServices?: string;
 
-  /**
-   * Subtitle Services — `string`
-   *
-   *
-   */
-  subtitleServices?: string;
+    /**
+     * Subtitle Services — `string`
+     *
+     *
+     */
+    subtitleServices?: string;
+  };
 }
 
 export type Documents = LandingPageRecord;

@@ -1,6 +1,11 @@
 import { Title } from "../../../design-system";
 
-const HeroTextBox = () => {
+type HeroTextBoxProps = {
+  title?: string;
+  text?: string;
+};
+
+const HeroTextBox = ({ title, text }: HeroTextBoxProps) => {
   return (
     <div className=" col-span-1 ">
       <div className="flex flex-col items-center md:items-start">
