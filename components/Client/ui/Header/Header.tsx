@@ -2,8 +2,11 @@
 
 import NavigationDesktop from "./components/NavigationDesktop";
 import NavigationMobile from "./components/NavigationMobile";
+import { useHeaderStore, HeaderStoreTypes } from "./store/header-store";
 
 const Header = () => {
+  const {navBarOpen, setNavBarOpen} = useHeaderStore();
+
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
       <div className=" wrapper-mobile md:wrapper flex justify-between h-full items-center ">
@@ -16,7 +19,7 @@ const Header = () => {
 
         <nav className="max-w-xl ">
           <NavigationDesktop />
-          <NavigationMobile />
+          <NavigationMobile isOpen={navBarOpen} setOpen={setNavBarOpen} />
         </nav>
       </div>
     </header>

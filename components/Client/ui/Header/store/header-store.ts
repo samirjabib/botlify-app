@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface useHeaderStore {
+export type HeaderStoreTypes = {
   navBarOpen: boolean;
   setNavBarOpen: (by: boolean) => void;
-}
+};
 
-const useHeaderStore = create<useHeaderStore>()((set) => ({
+export const useHeaderStore = create<HeaderStoreTypes>()((set) => ({
   navBarOpen: false,
   setNavBarOpen: (boolean) => set({ navBarOpen: boolean }),
 }));
