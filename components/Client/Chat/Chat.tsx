@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionContent,
   AccordionTrigger,
-} from "../ui/Accordion";
+} from "../ui/Accordion/Accordion";
 
 import ChatInput from "./ChatInput";
 import ChatMessages from "./ChatMessages";

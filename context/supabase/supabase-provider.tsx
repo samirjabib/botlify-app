@@ -3,7 +3,7 @@
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import SupabaseContext from "@/context/supabase/supabase-context";
+import SupabaseContext from "./supabase-context";
 
 export default function SupabaseProvider({
   children,
