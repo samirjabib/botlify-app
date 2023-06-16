@@ -1,4 +1,4 @@
-import Header from "../../design-system/elements/Header/Header";
+import Header from "@/components/Client/ui/Header/Header";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",

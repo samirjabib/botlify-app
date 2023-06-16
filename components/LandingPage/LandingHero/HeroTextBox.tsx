@@ -10,7 +10,7 @@ const HeroTextBox = ({ title, text }: HeroTextBoxProps) => {
     <div className=" col-span-1 ">
       <div className="flex flex-col items-center md:items-start">
         <Title
-          className="max-w-[550px] text-white mb-4"
+          className="max-w-[550px] text-white mb-4 text-center md:text-start"
           intent={"primary"}
           size={"mainTitle"}
           as="h1"

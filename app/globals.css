@@ -28,6 +28,10 @@
     @apply mx-auto px-16 xl:container;
   }
 
+  .wrapper-mobile {
+    @apply mx-auto px-8 xl:container;
+  }
+
 /****************************************+Input styles********************************************/
 
     /* Remove autofill ugly style */

@@ -7,12 +7,11 @@ type LandingHeroProps = {
 };
 
 const LandingHero = ({ content }: LandingHeroProps) => {
-
   // const { titleHeroBox, textHeroBox } = content.landingHero;
   return (
-    <div className="w-full pt-72 pb-44">
-      <div className=" wrapper grid grid-cols-1 md:grid-cols-2 justify-center ">
-        <HeroTextBox  />
+    <div className="w-full pt-32 md:pt-72 pb-44">
+      <div className=" wrapper-mobile md:wrapper grid grid-cols-1 md:grid-cols-2 justify-center ">
+        <HeroTextBox />
         <HeroImageBox />
       </div>
     </div>
