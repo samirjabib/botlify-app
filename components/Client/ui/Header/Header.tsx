@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import NavigationDesktop from "./components/desktop/NavigationDesktop";
 import NavigationMobile from "./components/mobile/NavigationMobile";
 import { useHeaderStore, HeaderStoreTypes } from "./store/header-store";
@@ -7,6 +8,18 @@ import NavigationLinks from "./utils/constants";
 
 const Header = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
+
+  useEffect(() => {
+    if (navBarOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [navBarOpen]);
 
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
@@ -20,7 +33,11 @@ const Header = () => {
 
         <nav className="max-w-xl ">
           <NavigationDesktop />
-          <NavigationMobile isOpen={navBarOpen} setOpen={setNavBarOpen} links={NavigationLinks}/>
+          <NavigationMobile
+            isOpen={navBarOpen}
+            setOpen={setNavBarOpen}
+            links={NavigationLinks}
+          />
         </nav>
       </div>
     </header>

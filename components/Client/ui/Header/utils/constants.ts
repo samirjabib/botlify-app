@@ -21,10 +21,6 @@ const NavigationLinks = [
     name: "Blog",
     path: "/blog",
   },
-  {
-    name: "Contacto",
-    path: "/contact",
-  },
 ];
 
 export default NavigationLinks;
