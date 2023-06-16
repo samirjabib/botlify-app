@@ -1,11 +1,10 @@
-import { defineField, defineType } from "sanity";
-
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'landingHeroRecord',
   title: 'Landing Hero',
   type: 'object',
-  fields:[
+  fields: [
     defineField({
       name: 'slug',
       type: 'slug',
@@ -49,5 +48,5 @@ export default defineType({
         hotspot: true,
       },
     }),
-  ]
+  ],
 })

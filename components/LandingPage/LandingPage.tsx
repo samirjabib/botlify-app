@@ -1,5 +1,5 @@
 import { LandingPageRecord } from "sanity/types/schema";
-import Footer from "../Client/ui/Footer/Footer";
+import Footer from "../../design-system/elements/Footer/Footer";
 import LandingBenefits from "./LandingBenefits/LandingBenefits";
 import LandingContact from "./LandingContact/LandingContact";
 import LandingHero from "./LandingHero/LandingHero";
