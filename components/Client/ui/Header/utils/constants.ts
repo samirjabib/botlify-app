@@ -1,6 +1,7 @@
 type NavigationLinks = {
   name: string;
   path: string;
+  icon?: string;
 };
 
 const NavigationLinks = [
