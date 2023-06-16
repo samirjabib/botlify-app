@@ -72,20 +72,23 @@ export interface Database {
         Row: {
           created_at: string | null
           description: string | null
-          id: number
+          id: string
           service: string | null
+          status: boolean | null
         }
         Insert: {
           created_at?: string | null
           description?: string | null
-          id?: number
+          id: string
           service?: string | null
+          status?: boolean | null
         }
         Update: {
           created_at?: string | null
           description?: string | null
-          id?: number
+          id?: string
           service?: string | null
+          status?: boolean | null
         }
         Relationships: []
       }
