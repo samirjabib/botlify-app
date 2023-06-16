@@ -9,7 +9,11 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-function SwiperButton({ children, className, ...props }: ButtonProps) {
+function SwiperButton({
+  children,
+  className,
+  ...props
+}: ButtonProps) {
   const classNames = twMerge(className);
 
   return (
