@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import { MoveLeft, MoveRight } from "lucide-react";
 import TestimonialItem from "./TestimonialItem";
 import SwiperButton from "./SwiperButton";
+import mockData from "./mockData";
 
 export const TestimonialSwiper = () => {
   //useSwiper is bugged, so we wait for update to fix it in swiperV9
@@ -25,9 +26,14 @@ export const TestimonialSwiper = () => {
       pagination={{ clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      {Array.from({ length: 3 }).map((_, i) => (
-        <SwiperSlide className=" w-full " key={i}>
-          <TestimonialItem />
+      {mockData.map((testimonial, i) => (
+        <SwiperSlide key={i}>
+          <TestimonialItem
+            id={testimonial.id}
+            quote={testimonial.quote}
+            author={testimonial.author}
+            occupation={testimonial.occupation}
+          />
         </SwiperSlide>
       ))}
       <div className="flex flex-row gap-x-4 justify-center items-center mt-8">
