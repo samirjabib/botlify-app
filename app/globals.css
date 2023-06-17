@@ -111,7 +111,7 @@ input::-webkit-inner-spin-button {
   }
 
   .section-title {
-    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0
+    @apply scroll-m-20  pb-2 sm:text-3xl text-4xl font-semibold tracking-tight transition-colors first:mt-0
   }
 
   .section-subtitle {

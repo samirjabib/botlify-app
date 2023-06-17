@@ -1,13 +1,25 @@
+import { Title } from "@/design-system/index";
+
 const ContactTextBox = () => {
   return (
     <div className="col-span-1    ">
       <div className="w-full max-w-lg">
-        <h3 className="section-subtitle mb-2 text-white/60">Contacto</h3>
+        <Title
+          as="h3"
+          size={"sectionSubtitle"}
+          className="section-subtitle mb-2 text-white/60"
+        >
+          Contacto
+        </Title>
         <div>
-          <h2 className="text-white text-3xl mb-4 font-bold tracking-tighter">
+          <Title
+            as="h2"
+            size={"sectionTitle"}
+            className="text-white text-3xl mb-4 font-bold tracking-tighter"
+          >
             Amplifica tu éxito comercial: Potencia tus ventas con nuestra
             solución avanzada
-          </h2>
+          </Title>
           <p className="text-white/80 text-base pr-10 tracking-tighter">
             Automatización potente y mayor satisfacción del cliente con nuestro
             chatbot inteligente.

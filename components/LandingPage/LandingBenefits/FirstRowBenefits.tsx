@@ -1,14 +1,20 @@
+import { Title } from "@/design-system/index";
+
 const FirstRowBenefits = () => {
   return (
     <div className="w-full flex flex-col  sm:flex-row py-24 ">
       <div className="w-full sm:w-[50%]">
-        <p className="text-white/60 text-sm text-start font-bold  mx-auto uppercase mb-2">
+        <Title
+          as="h3"
+          size={"sectionSubtitle"}
+          className="text-white/60 text-start font-bold  mx-auto  mb-2"
+        >
           Obten estos beneficios
-        </p>
-        <h3 className=" font-semibold text-3xl mb-4 tracking-tighter max-w-xl pr-4">
+        </Title>
+        <Title className=" font-semibold text-3xl mb-4 tracking-tighter max-w-xl pr-4">
           Multiplica tu productividad y ahorra tiempo con nuestra solución de
           automatización
-        </h3>
+        </Title>
         <p className="text-white/80 text-base tracking-tighter mb-4  max-w-xl pr-8  ">
           Descubre cómo puedes mejorar la eficiencia y reducir la carga de
           trabajo manual mediante la automatización de tus procesos. Con la
