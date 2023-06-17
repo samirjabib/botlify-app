@@ -1,25 +1,33 @@
 "use client";
+"use client";
+import { SwiperOptions } from "swiper/types/swiper-options";
+import { A11y, Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/swiper-bundle.min.css";
-import "swiper/css/pagination";
 
 import { MoveLeft, MoveRight } from "lucide-react";
 import TestimonialItem from "./TestimonialItem";
 import SwiperButton from "./SwiperButton";
 import mockData from "./mockData";
 
+import "swiper/css";
+
 export const TestimonialSwiper = () => {
-  //useSwiper is bugged, so we wait for update to fix it in swiperV9
-  const handleSlideNext = () => {};
+  const swiper = useSwiper();
 
-  const handleSlidePrev = () => {
-    console.log("click");
+  //Settings configure swiper
+  const sliderSettings: SwiperOptions = {
+    modules: [Navigation, A11y, Autoplay],
+    spaceBetween: 10,
+    slidesPerView: "auto",
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
   };
-
   return (
     <Swiper
+      {...sliderSettings}
       className="w-full  flex flex-col items-center max-w-4xl"
       slidesPerView={1}
       grabCursor={false}
@@ -37,10 +45,10 @@ export const TestimonialSwiper = () => {
         </SwiperSlide>
       ))}
       <div className="flex flex-row gap-x-4 justify-center items-center mt-8">
-        <SwiperButton onClick={handleSlideNext}>
+        <SwiperButton onClick={() => swiper.slidePrev()}>
           <MoveLeft className="text-white/60 text-base transition-all hover:text-white cursor-pointer" />
         </SwiperButton>
-        <SwiperButton onClick={handleSlidePrev}>
+        <SwiperButton onClick={() => swiper.slideNext()}>
           <MoveRight className="text-white/60 text-base transition-all hover:text-white cursor-pointer" />
         </SwiperButton>
       </div>
