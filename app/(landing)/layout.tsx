@@ -1,4 +1,5 @@
 import Header from "@/components/Client/ui/Header/Header";
+import Footer from "@/design-system/elements/Footer";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",
@@ -12,6 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <main>
       <Header />
       {children}
+      <Footer />
     </main>
   );
 }
