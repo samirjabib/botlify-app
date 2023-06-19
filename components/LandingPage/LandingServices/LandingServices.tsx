@@ -3,7 +3,7 @@ import ServicesItem from "./ServicesItem";
 
 const LandingServices = () => {
   return (
-    <div className="w-full  pt-12 pb-20bg-gray">
+    <div className="w-full  pt-12 pb-20 bg-gray">
       <Title
         as="h3"
         size={"sectionSubtitle"}

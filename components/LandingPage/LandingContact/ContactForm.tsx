@@ -2,24 +2,24 @@
 import { FloatingInput } from "../../../design-system";
 import { ContactSchema } from "../../../lib/validators/contact-form";
 import { Textarea } from "../../ui/Textarea";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import { zodResolver } from "@hookform/resolvers/zod";
 
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<ContactSchema>({
-    mode: "onSubmit",
-    resolver: zodResolver(ContactSchema),
-  });
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm<ContactSchema>({
+  //   mode: "onSubmit",
+  //   resolver: zodResolver(ContactSchema),
+  // });
 
-  const onSubmit = (data: ContactSchema) => {
-    console.log(data);
-  };
+  // const onSubmit = (data: ContactSchema) => {
+  //   console.log(data);
+  // };
 
   return (
     <div className="col-span-1  w-full flex justify-end">

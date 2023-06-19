@@ -3,7 +3,7 @@ import { BadgeCheck } from "lucide-react";
 
 const SecondRowBenefits = () => {
   return (
-    <div className="w-full flex flex-col sm:flex-row py-24 ">
+    <div className="w-full flex flex-col sm:flex-row py-16 sm:py-24 ">
       <div className="w-1/2">
         <div className="h-full bg-yellow-500 rounded-md shadow-lg max-w-xl " />
       </div>

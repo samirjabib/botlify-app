@@ -28,7 +28,7 @@ export const TestimonialSwiper = () => {
   return (
     <Swiper
       {...sliderSettings}
-      className="w-full  flex flex-col items-center max-w-4xl"
+      className="w-full  flex flex-col items-center max-w-4xl "
       slidesPerView={1}
       grabCursor={false}
       pagination={{ clickable: true }}
