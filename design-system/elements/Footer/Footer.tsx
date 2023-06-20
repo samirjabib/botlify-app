@@ -11,8 +11,10 @@ const Footer = () => {
         <FooterNav />
         <FooterNewletters />
       </div>
-      <div className="wrapper-mobile wrapper pt-8">
-        <div>© 2023-Actualidad Botlify™. All Rights Reserved.</div>
+      <div className="wrapper-mobile wrapper pt-8 flex flex-row justify-between">
+        <p className="text-white/60 text-sm">
+          © 2023-Actualidad Botlify™. All Rights Reserved.
+        </p>
         <FooterSocialMedia />
       </div>
     </footer>
