@@ -18,10 +18,10 @@ const LoginModalClient = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>Open</DialogTrigger>
-      <DialogContent className="bg-blue    mobile-wrapper wrapper  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <DialogContent className="bg-blue  border border-white/20 shadow-2xl mobile-wrapper wrapper  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <DialogHeader>
-          <DialogTitle className="text-center text-white w-full border-red-500  ">
-            <Title as="h2" size={"textTitle"} className="">
+          <DialogTitle className="text-center text-white w-full border-red-500 max-w-sm ">
+            <Title as="h2" size={"textTitle"} className="max-w-sm ">
               Login or sign up with your account
             </Title>
           </DialogTitle>
