@@ -3,10 +3,10 @@ import { FcGoogle } from "react-icons/fc";
 const LoginProviders = () => {
   return (
     <div>
-      <div className="bg-darkGray py-2 rounded-full">
-        <button className="text-white flex  w-full justify-center px-4  gap-x-2">
+      <div className=" bg-darkGray py-2 rounded-full max-w-sm">
+        <button className="text-white flex  w-full justify-center px-4  gap-x-2 font-bold ">
           <p> Continuar con google</p>
-          <FcGoogle size={20} />
+          <FcGoogle size={22} />
         </button>
       </div>
     </div>
