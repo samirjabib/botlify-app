@@ -1,4 +1,4 @@
-import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-client";
+import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-server";
 import { NextResponse } from "next/server";
 import { Service } from "types/collections";
 import { v4 as uuidv4 } from "uuid";
