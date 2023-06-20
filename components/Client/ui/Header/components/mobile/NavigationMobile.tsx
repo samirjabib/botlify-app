@@ -27,7 +27,7 @@ const NavigationMobile = ({
   };
 
   return (
-    <div className="  flex md:hidden" onClick={() => setOpen(!isOpen)}>
+    <div className="md:hidden " onClick={() => setOpen(!isOpen)}>
       <Hamburger toggled={isOpen} color="white" size={28} />
       <AnimatePresence>
         {isOpen && (
@@ -37,7 +37,7 @@ const NavigationMobile = ({
             transition={{ duration: 0.5 }}
             animate={{ height: "100vh", opacity: 1 }}
             exit="exit"
-            className="absolute top-20 left-0 w-full h-screen bg-black flex flex-col items-center justify-center gap-y-8 overflow-hidden"
+            className="absolute top-20 left-0  w-full h-screen bg-black flex flex-col items-center justify-center gap-y-8"
           >
             <ul className="flex flex-col items-center justify-center gap-y-8">
               {links.map((link) => (

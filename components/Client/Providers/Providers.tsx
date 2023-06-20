@@ -43,14 +43,16 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
   }, [pathname]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <SupabaseProvider>
-        <MessagesProvider>
-          {children}
-          <Chat />
-        </MessagesProvider>
-      </SupabaseProvider>
-    </QueryClientProvider>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <SupabaseProvider>
+          <MessagesProvider>
+            {children}
+            <Chat />
+          </MessagesProvider>
+        </SupabaseProvider>
+      </QueryClientProvider>
+    </>
   );
 };
 

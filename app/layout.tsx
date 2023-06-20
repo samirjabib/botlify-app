@@ -1,9 +1,9 @@
 import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
-import clsx from "clsx";
 import Providers from "@/components/Client/Providers/Providers";
 import { exo, roboto } from "./../design-system";
+import clsx from "clsx";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",

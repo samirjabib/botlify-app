@@ -5,8 +5,8 @@ import FooterSocialMedia from "./FooterSocialMedia";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray py-16 sm:py-24a">
-      <div className="wrapper-mobile wrapper  flex flex-row justify-between items-center border-b-[.5px] border-white/20 pb-8">
+    <footer className="bg-gray pt-16 sm:pt-24 pb-36 ">
+      <div className="wrapper-mobile wrapper  flex flex-col sm:flex-row justify-between items-center border-b-[.5px] border-white/20 pb-8">
         <Logo />
         <FooterNav />
         <FooterNewletters />

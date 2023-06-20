@@ -8,19 +8,21 @@ import { useEffect } from "react";
 
 const Header = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
-  console.log("navBarOpen", navBarOpen);
 
-  // useEffect(() => {
-  //   if (navBarOpen) {
-  //     document.body.classList.add("overflow-hidden");
-  //   } else {
-  //     document.body.classList.remove("overflow-hidden");
-  //   }
+  useEffect(() => {
+    if (navBarOpen) {
+      document.body.classList.add("overflow-hidden");
+      console.log("is open");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+      console.log("is closed");
+    }
 
-  //   return () => {
-  //     document.body.classList.remove("overflow-hidden");
-  //   };
-  // }, [navBarOpen]);
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+      console.log("is removed and closed");
+    };
+  }, [navBarOpen]);
 
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
@@ -41,6 +43,14 @@ const Header = () => {
           />
         </nav>
       </div>
+      {/* Black background for mobile menu */}
+      {/* <div
+        className={`fixed top-0 z-30 h-screen w-full overflow-hidden transition-opacity duration-75 ease-in-out ${
+          navBarOpen
+            ? "opacity-100 pointer-events-auto bg-black"
+            : "opacity-0 pointer-events-none"
+        }`}
+      /> */}
     </header>
   );
 };
