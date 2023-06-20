@@ -58,7 +58,9 @@ const NavigationMobile = ({
                 },
               }}
             >
-              <a className="text-xl">Sign In</a>
+              <button className="text-xl" onClick={() => console.log("hello")}>
+                Sign In
+              </button>
             </motion.button>
           </motion.div>
         )}
