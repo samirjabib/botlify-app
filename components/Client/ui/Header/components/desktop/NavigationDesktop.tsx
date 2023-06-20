@@ -14,7 +14,7 @@ const NavigationDesktop = () => {
         <a>Blog</a>
       </li>
       <button className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full">
-        <a className="">Contacto</a>
+        <a className="">Sign In</a>
       </button>
     </ul>
   );

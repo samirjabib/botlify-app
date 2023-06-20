@@ -58,7 +58,7 @@ const NavigationMobile = ({
                 },
               }}
             >
-              <a className="text-xl">Contacto</a>
+              <a className="text-xl">Sign In</a>
             </motion.button>
           </motion.div>
         )}

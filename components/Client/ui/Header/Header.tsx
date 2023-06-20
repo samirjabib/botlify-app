@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
 import NavigationDesktop from "./components/desktop/NavigationDesktop";
 import NavigationMobile from "./components/mobile/NavigationMobile";
-import { useHeaderStore, HeaderStoreTypes } from "./store/header-store";
+import { useHeaderStore } from "./store/header-store";
 import NavigationLinks from "./utils/constants";
+import { useEffect } from "react";
 
 const Header = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
