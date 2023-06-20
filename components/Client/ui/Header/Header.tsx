@@ -8,18 +8,19 @@ import { useEffect } from "react";
 
 const Header = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
+  console.log("navBarOpen", navBarOpen);
 
-  useEffect(() => {
-    if (navBarOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
+  // useEffect(() => {
+  //   if (navBarOpen) {
+  //     document.body.classList.add("overflow-hidden");
+  //   } else {
+  //     document.body.classList.remove("overflow-hidden");
+  //   }
 
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [navBarOpen]);
+  //   return () => {
+  //     document.body.classList.remove("overflow-hidden");
+  //   };
+  // }, [navBarOpen]);
 
   return (
     <header className="h-20 w-full absolute top-0 left-0 bg-gray ">
