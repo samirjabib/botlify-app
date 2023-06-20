@@ -5,9 +5,12 @@ import NavigationMobile from "./components/mobile/NavigationMobile";
 import { useHeaderStore } from "./store/header-store";
 import NavigationLinks from "./utils/constants";
 import { useEffect } from "react";
+import { useLoginStore } from "@/components/Login/store/login-store";
+import Login from "@/components/Login/login";
 
 const Header = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
+  const { openModalLogin, setModalLogin } = useLoginStore();
 
   useEffect(() => {
     if (navBarOpen) {
@@ -35,22 +38,20 @@ const Header = () => {
         </div>
 
         <nav className="max-w-xl ">
-          <NavigationDesktop />
+          <NavigationDesktop
+            isOpenLogin={openModalLogin}
+            setOpenLogin={setModalLogin}
+          />
           <NavigationMobile
             isOpen={navBarOpen}
             setOpen={setNavBarOpen}
             links={NavigationLinks}
+            isOpenLogin={openModalLogin}
+            setOpenLogin={setModalLogin}
           />
         </nav>
       </div>
-      {/* Black background for mobile menu */}
-      {/* <div
-        className={`fixed top-0 z-30 h-screen w-full overflow-hidden transition-opacity duration-75 ease-in-out ${
-          navBarOpen
-            ? "opacity-100 pointer-events-auto bg-black"
-            : "opacity-0 pointer-events-none"
-        }`}
-      /> */}
+      <Login />
     </header>
   );
 };

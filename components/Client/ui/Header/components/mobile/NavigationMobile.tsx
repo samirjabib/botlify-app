@@ -8,10 +8,14 @@ const NavigationMobile = ({
   isOpen,
   setOpen,
   links,
+  isOpenLogin,
+  setOpenLogin,
 }: {
   isOpen: boolean;
   setOpen: (open: boolean) => void;
   links: NavigationLinks[];
+  isOpenLogin: boolean;
+  setOpenLogin: (open: boolean) => void;
 }) => {
   //lets start animation
   const item = {
@@ -58,7 +62,10 @@ const NavigationMobile = ({
                 },
               }}
             >
-              <button className="text-xl" onClick={() => console.log("hello")}>
+              <button
+                className="text-xl"
+                onClick={() => setOpenLogin(!isOpenLogin)}
+              >
                 Sign In
               </button>
             </motion.button>

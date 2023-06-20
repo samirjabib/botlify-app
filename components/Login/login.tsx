@@ -1,13 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 
 import LoginModalClient from "./login-modal-client";
+import { useLoginStore } from "./store/login-store";
 
 const Login = () => {
-  
+  const { openModalLogin, setModalLogin } = useLoginStore();
 
   return (
     <>
-      <LoginModalClient open={open} setOpen={setOpen} />
+      <LoginModalClient open={openModalLogin} setOpen={setModalLogin} />
     </>
   );
 };
