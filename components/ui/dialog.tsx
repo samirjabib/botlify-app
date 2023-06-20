@@ -71,7 +71,7 @@ const DialogHeader = ({
       className
     )}
     {...props}
-  />
+  /> 
 );
 DialogHeader.displayName = "DialogHeader";
 
