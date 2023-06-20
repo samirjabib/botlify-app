@@ -26,7 +26,7 @@ const ContactTextBox = () => {
           </p>
         </div>
 
-        <div className="hidden md:mt-80">
+        <div className="hidden md:block md:mt-80">
           <p className="text-white/80 text-start text-sm mb-4  tracking-tighter">
             "El bot para mi tienda de comercio electrónico ha sido
             transformador. Mejoró la interacción con los clientes, impulsó las

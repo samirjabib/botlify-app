@@ -1,11 +1,11 @@
 const FooterNav = () => {
   return (
-    <ul>
-      <li>Home</li>
-      <li>Servicios</li>
-      <li>Sobre Nosotros</li>
-      <li>Contacto</li>
-      <li>Blog</li>
+    <ul className="flex flex-row gap-6  text-white/60 text-sm">
+      <li className="cursor-pointer">Home</li>
+      <li className="cursor-pointer">Servicios</li>
+      <li className="cursor-pointer">Sobre Nosotros</li>
+      <li className="cursor-pointer">Contacto</li>
+      <li className="cursor-pointer">Blog</li>
     </ul>
   );
 };

@@ -19,7 +19,7 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
       <SupabaseProvider>
         <MessagesProvider>
           {children}
-          <Chat />
+          {/* <Chat /> */}
         </MessagesProvider>
       </SupabaseProvider>
     </QueryClientProvider>
