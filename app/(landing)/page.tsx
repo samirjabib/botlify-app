@@ -1,4 +1,4 @@
-import { LandingPage } from "@/components/LandingPage";
+import { LandingPage } from "@/components/landing-page";
 import clientFetch from "@/lib/sanity/sanity";
 import { groq } from "next-sanity";
 import { LandingPageRecord } from "sanity/types/schema";

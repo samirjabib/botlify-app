@@ -1,12 +1,10 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
-import { Title } from "@/design-system/index";
+
 import LoginProviders from "./login-providers";
 const LoginModalClient = ({
   open,
@@ -19,10 +17,10 @@ const LoginModalClient = ({
     <Dialog open={open} onOpenChange={setOpen} modal={true}>
       <DialogContent className="bg-blue w-80 border rounded-md pt-16 border-white/20 shadow-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <DialogHeader>
-          <DialogTitle className="text-center text-white w-full border-red-500 ">
-            <Title as="h2" size={"textTitle"} className="max-w-sm font-bold   mb-4">
+          <DialogTitle className="text-center text-white w-full ">
+            <p className="max-w-sm font-bold text-title  mb-4">
               Login or sign up with your account
-            </Title>
+            </p>
           </DialogTitle>
         </DialogHeader>
         <LoginProviders />

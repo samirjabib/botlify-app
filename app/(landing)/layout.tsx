@@ -1,5 +1,5 @@
-import Header from "@/components/Client/ui/Header/Header";
-import Footer from "@/design-system/elements/Footer";
+import Footer from "@/design-system/elements/footer/Footer";
+import Header from "@/design-system/elements/header/Header";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",

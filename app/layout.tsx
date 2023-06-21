@@ -3,10 +3,10 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { exo, roboto } from "./../design-system";
 import clsx from "clsx";
-import RootProviders from "@/components/Client/providers/root-providers";
 
 import "server-only";
 import { createClientSupabase } from "@/lib/supabase/supabase-browser";
+import RootProviders from "@/components/providers/root-providers";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",
@@ -20,7 +20,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
   const supabase = createClientSupabase();
   const {
     data: { session },
