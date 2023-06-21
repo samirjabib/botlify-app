@@ -1,11 +1,9 @@
+import "server-only";
 import {
   createServerComponentClient,
   createRouteHandlerClient,
 } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-
-import "server-only";
-
 
 // We will use this client in Server Components
 export const createServerSupabase = () => {

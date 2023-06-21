@@ -32,7 +32,7 @@ export const TestimonialSwiper = () => {
       slidesPerView={1}
       grabCursor={false}
       pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       {mockData.map((testimonial, i) => (
         <SwiperSlide key={i}>

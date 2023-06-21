@@ -30,8 +30,6 @@ const RootProviders: FC<ProvidersProps> = ({ children, serverSession }) => {
     window.scroll(0, 0);
   }, [pathname]);
 
-  console.log(serverSession);
-
   return (
     <>
       <QueryClientProvider client={queryClient}>

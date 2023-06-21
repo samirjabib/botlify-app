@@ -1,18 +1,19 @@
+import "server-only";
+
 import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import { exo, roboto } from "./../design-system";
 import clsx from "clsx";
 
-import "server-only";
-import { createClientSupabase } from "@/lib/supabase/supabase-browser";
 import RootProviders from "@/components/providers/root-providers";
+import { createServerSupabase } from "@/lib/supabase/supabase-server";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",
   description: "get your chatbox",
   category: "Technologies",
-  keywords: ["Chatbox", "ChatGtp", "Landing", "Vacation", "Work"],
+  keywords: ["Chatbox", "ChatGtp", "Landing", "Work"],
 };
 
 export default async function RootLayout({
@@ -20,7 +21,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = createClientSupabase();
+  const supabase = createServerSupabase();
+
   const {
     data: { session },
   } = await supabase.auth.getSession();

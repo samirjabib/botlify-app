@@ -23,7 +23,7 @@
     "@storybook/nextjs": "^7.0.20",
     "@storybook/react": "^7.0.20",
     "@supabase/auth-helpers-nextjs": "^0.7.2",
-    "@supabase/supabase-js": "^2.25.0",
+    "@supabase/supabase-js": "^2.26.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tanstack/react-query": "^4.29.14",
     "@tanstack/react-query-devtools": "^4.29.12",

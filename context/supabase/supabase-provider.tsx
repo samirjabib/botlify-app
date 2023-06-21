@@ -1,8 +1,7 @@
 "use client";
 
 import { createClientSupabase } from "@/lib/supabase/supabase-browser";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SupabaseContext from "./supabase-context";
 
 export default function SupabaseProvider({

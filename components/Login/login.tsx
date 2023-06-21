@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
-
 import LoginModalClient from "./login-modal-client";
 import { useLoginStore } from "./store/login-store";
 

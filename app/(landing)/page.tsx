@@ -6,7 +6,6 @@ import { LandingPageRecord } from "sanity/types/schema";
 export const revalidate = 60;
 
 export default async function Page() {
-  
   const landingPage: LandingPageRecord = await clientFetch(
     groq`*[_type == "landingPage"][0]`
   );
