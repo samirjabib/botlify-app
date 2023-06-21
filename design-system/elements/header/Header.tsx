@@ -1,6 +1,6 @@
 "use client";
-import Login from "@/components/Login/login";
-import Logo from "@/design-system/elements/Logo/Logo";
+import Login from "@/components/login/login";
+import Logo from "../logo/logo";
 import NavigationBar from "./components/navigation-bar";
 
 const Header = () => {

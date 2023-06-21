@@ -1,4 +1,4 @@
-import Logo from "../Logo/Logo";
+import Logo from "../logo/logo";
 import FooterNav from "./FooterNav";
 import FooterNewletters from "./FooterNewletters";
 import FooterSocialMedia from "./FooterSocialMedia";

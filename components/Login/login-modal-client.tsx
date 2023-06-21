@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/dialog";
 
 import LoginProviders from "./login-providers";
+
 const LoginModalClient = ({
   open,
   setOpen,

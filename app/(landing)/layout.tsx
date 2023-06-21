@@ -1,5 +1,4 @@
-import Footer from "@/design-system/elements/footer/Footer";
-import Header from "@/design-system/elements/header/Header";
+import { Header, Footer } from "@/design-system/index";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",

@@ -23,8 +23,6 @@ const AuthProvider = ({
       .single();
   };
 
-  console.log(getUser());
-
   return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import { useLoginStore } from "@/components/Login/store/login-store";
+import { useLoginStore } from "@/components/login/store/login-store";
 import { useEffect } from "react";
 import { useHeaderStore } from "../store/header-store";
 import NavigationLinks from "../utils/constants";

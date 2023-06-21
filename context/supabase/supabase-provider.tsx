@@ -11,7 +11,6 @@ export default function SupabaseProvider({
   children: React.ReactNode;
 }) {
   const [supabase] = useState(() => createClientSupabase());
-  const router = useRouter();
 
   return (
     <SupabaseContext.Provider value={{ supabase }}>
