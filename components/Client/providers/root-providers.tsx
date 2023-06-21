@@ -7,28 +7,16 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MessagesProvider } from "../Chat/context/messages";
 import SupabaseProvider from "context/supabase/supabase-provider";
 import { usePathname } from "next/navigation";
+import AuthProvider from "context/auth/auth-provider";
+import { Session } from "@supabase/supabase-js";
+import setupViewportHeight from "utils/setup-viewport-height";
 
 interface ProvidersProps {
   children: React.ReactNode;
+  serverSession: Session | null;
 }
 
-const setupViewportHeight = () => {
-  // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-  const viewportHeight = () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  };
-
-  viewportHeight();
-
-  window.addEventListener("resize", viewportHeight);
-
-  return () => {
-    window.removeEventListener("resize", viewportHeight);
-  };
-};
-
-const Providers: FC<ProvidersProps> = ({ children }) => {
+const RootProviders: FC<ProvidersProps> = ({ children, serverSession }) => {
   const queryClient = new QueryClient();
 
   useEffect(() => {
@@ -42,18 +30,22 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
     window.scroll(0, 0);
   }, [pathname]);
 
+  console.log(serverSession);
+
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <SupabaseProvider>
-          <MessagesProvider>
-            {children}
-            <Chat />
-          </MessagesProvider>
+          <AuthProvider serverSession={serverSession}>
+            <MessagesProvider>
+              {children}
+              <Chat />
+            </MessagesProvider>
+          </AuthProvider>
         </SupabaseProvider>
       </QueryClientProvider>
     </>
   );
 };
 
-export default Providers;
+export default RootProviders;

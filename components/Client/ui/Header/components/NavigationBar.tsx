@@ -1,0 +1,42 @@
+"use client";
+import { useLoginStore } from "@/components/Login/store/login-store";
+import { useEffect } from "react";
+import { useHeaderStore } from "../store/header-store";
+import NavigationLinks from "../utils/constants";
+import NavigationDesktop from "./desktop/NavigationDesktop";
+import NavigationMobile from "./mobile/NavigationMobile";
+
+const NavigationBar = () => {
+  const { navBarOpen, setNavBarOpen } = useHeaderStore();
+  const { openModalLogin, setModalLogin } = useLoginStore();
+
+  useEffect(() => {
+    if (navBarOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [navBarOpen]);
+
+  return (
+    <nav className="max-w-xl ">
+      <NavigationDesktop
+        isOpenLogin={openModalLogin}
+        setOpenLogin={setModalLogin}
+      />
+      <NavigationMobile
+        isOpen={navBarOpen}
+        setOpen={setNavBarOpen}
+        links={NavigationLinks}
+        isOpenLogin={openModalLogin}
+        setOpenLogin={setModalLogin}
+      />
+    </nav>
+  );
+};
+
+export default NavigationBar;

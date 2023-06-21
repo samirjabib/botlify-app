@@ -1,9 +1,12 @@
 import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
-import Providers from "@/components/Client/Providers/Providers";
 import { exo, roboto } from "./../design-system";
 import clsx from "clsx";
+import RootProviders from "@/components/Client/providers/root-providers";
+
+import "server-only";
+import { createClientSupabase } from "@/lib/supabase/supabase-browser";
 
 export const metadata = {
   title: "ChatBox | Find your chatbox",
@@ -12,11 +15,17 @@ export const metadata = {
   keywords: ["Chatbox", "ChatGtp", "Landing", "Vacation", "Work"],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  
+  const supabase = createClientSupabase();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
   return (
     <html lang="es" className={clsx(exo.variable, roboto.variable)}>
       <head>
@@ -24,7 +33,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-darkGray">
-        <Providers>{children}</Providers>
+        <RootProviders serverSession={session}>{children}</RootProviders>
         <Analytics />
       </body>
     </html>
