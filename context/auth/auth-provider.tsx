@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { useSupabase } from "hooks/useSupabase";
 import { AuthContext, AuthContextTypes } from "./auth-context";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const AuthProvider = ({
   children,
@@ -15,12 +15,11 @@ const AuthProvider = ({
   children: React.ReactNode;
   serverSession: Session | null;
 }) => {
-
   const { supabase } = useSupabase();
   const router = useRouter();
 
   const getUser = async () => {
-    console.log("this run");
+    console.log("get user runs");
     const { data: user, error } = await supabase
       .from("profiles")
       .select("*")
@@ -42,6 +41,7 @@ const AuthProvider = ({
   };
 
   const mutationKey = serverSession ? "profile-context" : null;
+
   const {
     data: user,
     error,
@@ -49,10 +49,12 @@ const AuthProvider = ({
     mutate,
   } = useMutation({
     mutationKey: [mutationKey],
-    mutationFn: getUser,
+    mutationFn: async () => {
+      const user = await getUser();
+      console.log(user, " this is the user on the function");
+      return user;
+    },
   });
-
-  console.log(user, ' this is the user')
 
   //sign out
   const signOut = async () => {
@@ -71,7 +73,9 @@ const AuthProvider = ({
       }
     });
 
-    return subscription.unsubscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [router, supabase, serverSession?.access_token]);
 
   const valuesExposed: AuthContextTypes = {

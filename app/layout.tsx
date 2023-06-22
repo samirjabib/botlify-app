@@ -7,6 +7,7 @@ import { exo, roboto } from "./../design-system";
 import clsx from "clsx";
 
 import RootProviders from "@/components/providers/root-providers";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { createServerSupabase } from "@/lib/supabase/supabase-server";
 
 export const metadata = {

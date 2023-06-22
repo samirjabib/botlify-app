@@ -1,5 +1,7 @@
 "use client";
 import { useLoginStore } from "@/components/login/store/login-store";
+import useAuth from "hooks/useAuth";
+import { useSupabase } from "hooks/useSupabase";
 import { useEffect } from "react";
 import { useHeaderStore } from "../store/header-store";
 import NavigationLinks from "../utils/constants";
@@ -9,6 +11,8 @@ import NavigationMobile from "./mobile/navigation-mobile";
 const NavigationBar = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
   const { openModalLogin, setModalLogin } = useLoginStore();
+  const { user } = useAuth();
+  console.log(user, " this is the user on the navigation bar");
 
   useEffect(() => {
     if (navBarOpen) {
