@@ -3,9 +3,9 @@ import { createContext } from "react";
 
 export interface AuthContextTypes {
   user: Profile | null | undefined;
-  error: unknown;
-  isLoading: boolean;
-  mutate: any;
+  error?: unknown;
+  isLoading?: boolean;
+  mutate?: any;
   signOut: () => Promise<void>;
   signInWithGoogle: () => Promise<void>;
 }

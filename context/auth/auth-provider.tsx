@@ -1,12 +1,14 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Session } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 
 import { useSupabase } from "hooks/useSupabase";
 import { AuthContext, AuthContextTypes } from "./auth-context";
 import { useEffect, useState } from "react";
+import { Profile } from "types/collections";
+import useSWR from "swr";
 
 const AuthProvider = ({
   children,
@@ -15,11 +17,14 @@ const AuthProvider = ({
   children: React.ReactNode;
   serverSession: Session | null;
 }) => {
+  // const [session, setSession] = useState<Session | null>(null);
+  // const [user, setUser] = useState<Profile | null>(null);
+
   const { supabase } = useSupabase();
   const router = useRouter();
 
+  // Get USER
   const getUser = async () => {
-    console.log("get user runs");
     const { data: user, error } = await supabase
       .from("profiles")
       .select("*")
@@ -29,32 +34,28 @@ const AuthProvider = ({
       console.log(error);
       return null;
     } else {
-      user && console.log(user);
+      return user;
     }
   };
 
-  const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
-    console.log(error);
-  };
-
-  const mutationKey = serverSession ? "profile-context" : null;
+  const key = serverSession ? "profile-context" : null;
 
   const {
     data: user,
     error,
     isLoading,
-    mutate,
-  } = useMutation({
-    mutationKey: [mutationKey],
-    mutationFn: async () => {
-      const user = await getUser();
-      console.log(user, " this is the user on the function");
-      return user;
-    },
+  } = useQuery({
+    queryKey: [key],
+    queryFn: getUser,
   });
+
+  const signInWithGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+
+    console.log(error);
+  };
 
   //sign out
   const signOut = async () => {
@@ -69,7 +70,7 @@ const AuthProvider = ({
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
       if (session?.access_token !== serverSession?.access_token) {
-        router.refresh;
+        router.refresh();
       }
     });
 
@@ -79,12 +80,11 @@ const AuthProvider = ({
   }, [router, supabase, serverSession?.access_token]);
 
   const valuesExposed: AuthContextTypes = {
-    error,
-    isLoading,
     signInWithGoogle,
     signOut,
-    mutate,
     user,
+    error,
+    isLoading,
   };
 
   return (

@@ -25,6 +25,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     setIsMessageUpdating,
   } = useContext(MessagesContext);
 
+  //change this for swr
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationKey: ["sendMessage"],
     mutationFn: async (_message: Message) => {
