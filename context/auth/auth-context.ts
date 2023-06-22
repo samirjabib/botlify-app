@@ -1,5 +1,5 @@
-import { Profile } from "types/collections";
 import { createContext } from "react";
+import { Profile } from "types/collections";
 
 export interface AuthContextTypes {
   user: Profile | null | undefined;

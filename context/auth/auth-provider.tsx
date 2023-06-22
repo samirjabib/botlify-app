@@ -8,7 +8,6 @@ import { useSupabase } from "hooks/useSupabase";
 import { AuthContext, AuthContextTypes } from "./auth-context";
 import { useEffect, useState } from "react";
 import { Profile } from "types/collections";
-import useSWR from "swr";
 
 const AuthProvider = ({
   children,

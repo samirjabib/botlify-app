@@ -12,7 +12,6 @@ const NavigationBar = () => {
   const { navBarOpen, setNavBarOpen } = useHeaderStore();
   const { openModalLogin, setModalLogin } = useLoginStore();
   const { user } = useAuth();
-  console.log(user, " this is the user on the navigation bar");
 
   useEffect(() => {
     if (navBarOpen) {
@@ -31,6 +30,7 @@ const NavigationBar = () => {
       <NavigationDesktop
         isOpenLogin={openModalLogin}
         setOpenLogin={setModalLogin}
+        user={user}
       />
       <NavigationMobile
         isOpen={navBarOpen}
@@ -38,6 +38,7 @@ const NavigationBar = () => {
         links={NavigationLinks}
         isOpenLogin={openModalLogin}
         setOpenLogin={setModalLogin}
+        user={user}
       />
     </nav>
   );

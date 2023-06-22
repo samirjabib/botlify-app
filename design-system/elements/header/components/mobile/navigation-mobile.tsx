@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ItemNav from "./item-nav";
 import NavigationLinks from "../../utils/constants";
+import { Profile } from "types/collections";
 
 const NavigationMobile = ({
   isOpen,
@@ -10,12 +11,14 @@ const NavigationMobile = ({
   links,
   isOpenLogin,
   setOpenLogin,
+  user,
 }: {
   isOpen: boolean;
   setOpen: (open: boolean) => void;
   links: NavigationLinks[];
   isOpenLogin: boolean;
   setOpenLogin: (open: boolean) => void;
+  user: Profile | null | undefined;
 }) => {
   //lets start animation
   const item = {

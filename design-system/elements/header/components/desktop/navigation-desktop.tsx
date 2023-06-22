@@ -1,7 +1,12 @@
+import { Session } from "@supabase/supabase-js";
+import { Profile } from "types/collections";
+
 const NavigationDesktop = ({
   isOpenLogin,
   setOpenLogin,
+  user,
 }: {
+  user: Profile | null | undefined;
   isOpenLogin: boolean;
   setOpenLogin: (open: boolean) => void;
 }) => {
@@ -19,12 +24,20 @@ const NavigationDesktop = ({
       <li className="relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
         <a>Blog</a>
       </li>
-      <button
-        className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
-        onClick={() => setOpenLogin(!isOpenLogin)}
-      >
-        Sign In
-      </button>
+      {user ? (
+        <h2>{user.full_name}</h2>
+      ) : (
+        // <Avatar>
+        //   <AvatarImage src="https://github.com/shadcn.png" />
+        //   <AvatarFallback>CN</AvatarFallback>
+        // </Avatar>
+        <button
+          className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
+          onClick={() => setOpenLogin(!isOpenLogin)}
+        >
+          Sign In
+        </button>
+      )}
     </ul>
   );
 };
