@@ -29,7 +29,7 @@ const AuthProvider = ({
       .from("profiles")
       .select("*")
       .eq("id", serverSession?.user?.id)
-      .single();
+      .maybeSingle();
     if (error) {
       console.log(error);
       return null;

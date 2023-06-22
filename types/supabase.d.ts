@@ -41,7 +41,6 @@ export interface Database {
           id: string
           updated_at: string | null
           username: string | null
-          website: string | null
         }
         Insert: {
           avatar_url?: string | null
@@ -49,7 +48,6 @@ export interface Database {
           id: string
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
         Update: {
           avatar_url?: string | null
@@ -57,7 +55,6 @@ export interface Database {
           id?: string
           updated_at?: string | null
           username?: string | null
-          website?: string | null
         }
         Relationships: [
           {
@@ -67,30 +64,6 @@ export interface Database {
             referencedColumns: ["id"]
           }
         ]
-      }
-      services: {
-        Row: {
-          created_at: string | null
-          description: string | null
-          id: string
-          service: string | null
-          status: boolean | null
-        }
-        Insert: {
-          created_at?: string | null
-          description?: string | null
-          id: string
-          service?: string | null
-          status?: boolean | null
-        }
-        Update: {
-          created_at?: string | null
-          description?: string | null
-          id?: string
-          service?: string | null
-          status?: boolean | null
-        }
-        Relationships: []
       }
     }
     Views: {
