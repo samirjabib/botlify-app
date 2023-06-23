@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ItemNav from "./item-nav";
 import NavigationLinks from "../../utils/constants";
 import { Profile } from "types/collections";
+import NavLinksMobiles from "./navigation-service";
 
 const NavigationMobile = ({
   isOpen,
@@ -44,13 +45,12 @@ const NavigationMobile = ({
             transition={{ duration: 0.5 }}
             animate={{ height: "100vh", opacity: 1 }}
             exit="exit"
-            className="absolute top-20 left-0  w-full h-screen bg-black flex flex-col items-center justify-center gap-y-8"
+            className="absolute top-20 left-0  w-full h-screen bg-black flex flex-col items-center justify-center  gap-y-8"
           >
-            <ul className="flex flex-col items-center justify-center gap-y-8">
-              {links.map((link) => (
-                <ItemNav key={link.name} {...link} />
-              ))}
+            <ul className="flex flex-col items-center justify-center gap-y-8 relative bottom-8">
+              <NavLinksMobiles />
             </ul>
+
             <motion.button
               className="border text-white transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
               initial={{ y: 80, opacity: 0 }}

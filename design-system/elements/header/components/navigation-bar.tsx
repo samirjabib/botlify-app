@@ -1,7 +1,6 @@
 "use client";
 import { useLoginStore } from "@/components/login/store/login-store";
 import useAuth from "hooks/useAuth";
-import { useSupabase } from "hooks/useSupabase";
 import { useEffect } from "react";
 import { useHeaderStore } from "../store/header-store";
 import NavigationLinks from "../utils/constants";
