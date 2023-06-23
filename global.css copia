@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+@layer base {
+    html {
+      @apply font-sans font-medium;
+    }
+  
+    h1 h2 h3 h4 h5 h6 {
+      @apply font-display;
+    }
+    
+  }
+
+
+@layer utilities {
+  * {
+    outline: none;
+    @apply antialiased;
+  }
+
+  .wrapper {
+    @apply mx-auto px-16 xl:container;
+  }
+
+  .wrapper-mobile {
+    @apply mx-auto px-8 xl:container;
+  }
+
+/****************************************+Input styles********************************************/
+
+    /* Remove autofill ugly style */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: 'color 9999s ease-out, background-color 9999s ease-out';
+    -webkit-transition-delay: 9999s;
+  }
+
+  /* Disable focus outline on inputs & textarea */
+  input:focus,
+  textarea:focus {
+    outline-style: none;
+    box-shadow: none;
+  }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*****************************Scroll styles ************************************/
+.scrollbar-w-2::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+  --bg-opacity: 1;
+  background-color:#16181d ;
+  background-color:#16181d;
+}
+
+.scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+  --bg-opacity: 0.3;
+  background-color: #087ea4;
+  background-color:#087ea4;
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+
+
+}
+@layer components {
+
+  /************************************ Buttons ********************************************/
+  .main-button {
+    @apply bg-blue transition-all hover:bg-hoverBlue rounded-full cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
+
+  .secundary-button {
+    @apply border-[0.5px] rounded-full border-white/20 transition-all hover:bg-white/10 cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
+
+  .terciary-button {
+    @apply bg-transparent border border-transparent rounded-full cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
+
+  .alter-main-button {
+    @apply bg-green-500 transition-all hover:bg-green-700 rounded-full cursor-pointer text-white font-bold px-6 py-2 shadow-lg
+  }
+
+
+  
+  /************************************+ Typografy config ********************************************/
+
+
+  /* Headers */
+  .main-title {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
+  }
+
+  .section-title {
+    @apply scroll-m-20  pb-2 sm:text-3xl text-4xl font-semibold tracking-tight transition-colors first:mt-0
+  }
+
+  .section-subtitle {
+    @apply text-white/60 text-sm font-bold uppercase
+  }
+
+  .text-title { 
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight
+  }
+
+  .text-subtitle {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight
+  }
+
+  
+
+  /* Text */
+  .text {
+    @apply leading-7 [&:not(:first-child)]:mt-6
+  }
+  
+  .small-text {
+    @apply text-sm font-medium leading-none
+  }
+  .text-quote {
+    @apply mt-6 border-l-2 pl-6 italic
+  }
+
+  .text-list {
+    @apply @applymy-6 ml-6 list-disc [&>li]:mt-2
+  }
+
+
+  .text-muted {
+    @apply text-sm text-muted-foreground
+  }
+}
+
+
+//
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./app/**/*.{js,ts,jsx,tsx}", 
+        "./components/**/*.{js,ts,jsx,tsx}",
+        "./design-system/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors:{
+        whiteBlue:'#9ccbdb',
+        blue:'#087ea4',
+        hoverBlue:'#066583',
+        hoverBlueLight:'#3998b6',
+        gray:'#23272f',
+        darkGray:'#1c1f25',
+        lightGray:'#737477',
+        grayBlack:'#16181d',
+        grayLight:'#40414f'
+      },
+      boxShadow: {
+        'outline-blue': '0 0 0 3px #087ea4',
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1240px',
+        xl: '1440px',
+      },
+      fontFamily: {
+        sans: ['var(--font-roboto)'],
+        display: ['var(--font-exo)'],
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+    variants: {
+      extend: {
+        boxShadow: ['focus'],
+      },
+    },
+  },
+  plugins: [require('@tailwindcss/forms')],
+};
+
+
+
+
+
+
+
