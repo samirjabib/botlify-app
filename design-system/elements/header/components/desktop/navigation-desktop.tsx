@@ -1,3 +1,4 @@
+import AvatarProfile from "@/components/ui/avatar";
 import { Session } from "@supabase/supabase-js";
 import { Profile } from "types/collections";
 
@@ -10,6 +11,8 @@ const NavigationDesktop = ({
   isOpenLogin: boolean;
   setOpenLogin: (open: boolean) => void;
 }) => {
+  console.log(user);
+
   return (
     <ul className="hidden md:flex flex-row items-center justify-end h-full text-white gap-x-8 cursor-pointer ">
       <li className="relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
@@ -25,12 +28,8 @@ const NavigationDesktop = ({
         <a>Blog</a>
       </li>
       {user ? (
-        <h2>{user.full_name}</h2>
+        <AvatarProfile image={user?.avatar_url} name={user?.full_name} />
       ) : (
-        // <Avatar>
-        //   <AvatarImage src="https://github.com/shadcn.png" />
-        //   <AvatarFallback>CN</AvatarFallback>
-        // </Avatar>
         <button
           className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
           onClick={() => setOpenLogin(!isOpenLogin)}
