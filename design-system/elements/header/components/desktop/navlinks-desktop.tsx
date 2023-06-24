@@ -1,19 +1,33 @@
 import React from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
-import { CaretDownIcon } from "@radix-ui/react-icons";
+import { Profile } from "types/collections";
+import Dropdown from "@/design-system/elements/dropdown-menu/dropdown-menu";
+import AvatarProfile from "@/components/ui/avatar";
 
-const Navigation = () => {
+const NavLinksDesktop = ({
+  user,
+  isOpenLogin,
+  setOpenLogin,
+}: {
+  user: Profile | null | undefined;
+  isOpenLogin: boolean;
+  setOpenLogin: (open: boolean) => void;
+}) => {
   return (
     <NavigationMenu.Root className="relative z-[1] flex w-screen justify-end ">
-      <NavigationMenu.List className="center m-0 flex list-none rounded-[6px]  p-1 ">
+      <NavigationMenu.List className="center m-0 flex list-none rounded-[6px] items-center p-1  gap-x-4">
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className=" text-white group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none ">
+          <NavigationMenu.Link
+            className="text-white relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left "
+            href="https://github.com/radix-ui"
+          >
+            Home
+          </NavigationMenu.Link>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger className="text-white relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ">
             Servicios
-            <CaretDownIcon
-              className="relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-              aria-hidden
-            />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="bg-darkGray backdrop-blur-2xl shadow-lg border border-white/20 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto">
             <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
@@ -62,6 +76,18 @@ const Navigation = () => {
             Contacto
           </NavigationMenu.Link>
         </NavigationMenu.Item>
+        {user ? (
+          <Dropdown>
+            <AvatarProfile image={user?.avatar_url} name={user?.full_name} />
+          </Dropdown>
+        ) : (
+          <button
+            className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full w-[80%]"
+            onClick={() => setOpenLogin(!isOpenLogin)}
+          >
+            Sign In
+          </button>
+        )}
 
         <NavigationMenu.Indicator className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]">
           <div className="relative top-[70%] h-[10px] w-[10px] rotate-[45deg] rounded-tl-[2px] bg-white" />
@@ -109,4 +135,4 @@ const ListItem = (
   </li>
 );
 
-export default Navigation;
+export default NavLinksDesktop;

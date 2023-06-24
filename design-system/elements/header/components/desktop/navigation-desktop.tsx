@@ -1,5 +1,5 @@
 import AvatarProfile from "@/components/ui/avatar";
-import Navigation from "@/components/ui/navigation";
+import NavLinksDesktop from "@/design-system/elements/header/components/desktop/navlinks-desktop";
 import Dropdown from "@/design-system/elements/dropdown-menu/dropdown-menu";
 import { Profile } from "types/collections";
 
@@ -14,19 +14,11 @@ const NavigationDesktop = ({
 }) => {
   return (
     <ul className="hidden md:flex flex-row items-center justify-end h-full text-white gap-x-8 cursor-pointer ">
-      <Navigation />
-      {user ? (
-        <Dropdown>
-          <AvatarProfile image={user?.avatar_url} name={user?.full_name} />
-        </Dropdown>
-      ) : (
-        <button
-          className="border transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
-          onClick={() => setOpenLogin(!isOpenLogin)}
-        >
-          Sign In
-        </button>
-      )}
+      <NavLinksDesktop
+        user={user}
+        setOpenLogin={setOpenLogin}
+        isOpenLogin={isOpenLogin}
+      />
     </ul>
   );
 };
