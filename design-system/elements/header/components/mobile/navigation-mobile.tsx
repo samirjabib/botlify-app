@@ -53,31 +53,30 @@ const NavigationMobile = ({
             exit="exit"
             className="absolute top-20 left-0  w-full h-screen bg-black flex flex-col items-center justify-center  gap-y-8"
           >
-            <ul className="flex flex-col items-center justify-center gap-y-8 relative bottom-8">
+            <ul className="flex flex-col items-center justify-center gap-y-8 relative bottom-24">
               <NavLinksMobiles />
-            </ul>
-
-            <motion.button
-              className="border text-white transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
-              initial={{ y: 80, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              exit={{
-                opacity: 0,
-                y: 90,
-                transition: {
-                  ease: "easeInOut",
-                  delay: 1,
-                },
-              }}
-            >
-              <button
-                className="text-xl"
-                onClick={() => setOpenLogin(!isOpenLogin)}
+              <motion.button
+                className="border text-white transition-all hover:bg-white/10 font-medium border-white/20 px-4 py-1 rounded-full"
+                initial={{ y: 80, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                exit={{
+                  opacity: 0,
+                  y: 90,
+                  transition: {
+                    ease: "easeInOut",
+                    delay: 1,
+                  },
+                }}
               >
-                Sign In
-              </button>
-            </motion.button>
+                <button
+                  className="text-xl "
+                  onClick={() => setOpenLogin(!isOpenLogin)}
+                >
+                  Sign In
+                </button>
+              </motion.button>
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>

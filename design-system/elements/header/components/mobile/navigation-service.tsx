@@ -3,8 +3,6 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
 
 const NavLinksMobiles = () => {
-  const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-
   return (
     <NavigationMenu.Root className="relative z-[1] flex w-screen h-full flex-col gap-y-4  items-center ">
       <NavigationMenu.Item>
@@ -18,47 +16,29 @@ const NavLinksMobiles = () => {
 
       <NavigationMenu.List className="center m-0 flex list-none rounded-[6px]  p-1 ">
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger
-            onClick={() => setSubMenuOpen(!isSubMenuOpen)}
-            className=" text-white text-xl font-bold group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px]  leading-none outline-none "
-          >
+          <NavigationMenu.Trigger className=" text-white text-xl font-bold group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px]  leading-none outline-none ">
             Servicios
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content
-            onBlur={() => setSubMenuOpen(false)}
-            className="bg-darkGray backdrop-blur-2xl shadow-lg border border-white/20 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto"
-          >
+          <NavigationMenu.Content className="bg-darkGray backdrop-blur-2xl shadow-lg border border-white/20 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-[80%]">
             <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
-              <li className="row-span-3 grid">
-                <NavigationMenu.Link asChild>
-                  <a
-                    className="focus:shadow-violet7 relative from-purple9 to-indigo9 flex
-                    h-full w-full select-none flex-col justify-end rounded-[6px] bg-gradient-to-b p-[25px] no-underline outline-none focus:shadow-[0_0_0_2px]"
-                    href="/"
-                  >
-                    <div className="bg-yellow-500 h-full w-full absolute top-0 left-0"></div>
-                  </a>
-                </NavigationMenu.Link>
-              </li>
-
               <ListItem
                 href="https://stitches.dev/"
                 title="Bot Mesero"
-                className="transition-all hover:bg-blue "
+                className="transition-all text-white text-center "
               >
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
               <ListItem
                 href="/colors"
                 title="Bot Asistente"
-                className="transition-all hover:bg-blue "
+                className="transition-all text-white text-center "
               >
                 Beautiful, thought-out palettes with auto dark mode.
               </ListItem>
               <ListItem
                 href="https://icons.radix-ui.com/"
                 title="Bot Asesor"
-                className="transition-all hover:bg-blue "
+                className="transition-all text-white text-center "
               >
                 A crisp set of 15x15 icons, balanced and consistent.
               </ListItem>
@@ -115,7 +95,7 @@ const ListItem = (
         <div className="text-violet12 mb-[5px] font-medium leading-[1.2]">
           {title}
         </div>
-        <p className="text-mauve11 leading-[1.4]">{children}</p>
+        <p className="text-mauve11 leading-[1.4] text-white/80">{children}</p>
       </a>
     </NavigationMenu.Link>
   </li>
