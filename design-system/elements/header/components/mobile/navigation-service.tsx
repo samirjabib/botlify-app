@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
 
 const NavLinksMobiles = () => {
+  const [isSubMenuOpen, setSubMenuOpen] = useState(false);
+
   return (
     <NavigationMenu.Root className="relative z-[1] flex w-screen h-full flex-col gap-y-4  items-center ">
       <NavigationMenu.Item>
@@ -16,10 +18,16 @@ const NavLinksMobiles = () => {
 
       <NavigationMenu.List className="center m-0 flex list-none rounded-[6px]  p-1 ">
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className=" text-white text-xl font-bold group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px]  leading-none outline-none ">
+          <NavigationMenu.Trigger
+            onClick={() => setSubMenuOpen(!isSubMenuOpen)}
+            className=" text-white text-xl font-bold group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px]  leading-none outline-none "
+          >
             Servicios
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="bg-darkGray backdrop-blur-2xl shadow-lg border border-white/20 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto">
+          <NavigationMenu.Content
+            onBlur={() => setSubMenuOpen(false)}
+            className="bg-darkGray backdrop-blur-2xl shadow-lg border border-white/20 data-[motion=from-start]:animate-enterFromLeft data-[motion=from-end]:animate-enterFromRight data-[motion=to-start]:animate-exitToLeft data-[motion=to-end]:animate-exitToRight absolute top-0 left-0 w-full sm:w-auto"
+          >
             <ul className="one m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[500px] sm:grid-cols-[0.75fr_1fr]">
               <li className="row-span-3 grid">
                 <NavigationMenu.Link asChild>

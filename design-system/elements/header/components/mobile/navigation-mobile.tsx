@@ -5,6 +5,7 @@ import ItemNav from "./item-nav";
 import NavigationLinks from "../../utils/constants";
 import { Profile } from "types/collections";
 import NavLinksMobiles from "./navigation-service";
+import { useEffect, useRef } from "react";
 
 const NavigationMobile = ({
   isOpen,
@@ -34,9 +35,14 @@ const NavigationMobile = ({
     },
   };
 
+  console.log(isOpen);
+
   return (
-    <div className="md:hidden " onClick={() => setOpen(!isOpen)}>
-      <Hamburger toggled={isOpen} color="white" size={28} />
+    <div className="md:hidden ">
+      <div onClick={() => setOpen(!isOpen)}>
+        <Hamburger toggled={isOpen} color="white" size={28} />
+      </div>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
