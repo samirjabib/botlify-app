@@ -1,7 +1,7 @@
 import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-server";
 import { NextResponse } from "next/server";
-import { Service } from "types/collections";
 import { v4 as uuidv4 } from "uuid";
+import { Service } from "types/collections";
 
 export async function POST(request: Request) {
   const service: Service = await request.json();
@@ -48,4 +48,25 @@ export async function POST(request: Request) {
     { message: "service has be created" },
     { status: 201 }
   );
+}
+
+export async function GET(request: Request) {
+  //create supabase client
+
+  const supabase = createRouteHandlerSupabase();
+
+  //get all services
+  const { data: services, error } = await supabase.from("services").select("*");
+
+  if (error) {
+    return NextResponse.json(error, { status: 500 });
+  }
+
+  return new NextResponse(JSON.stringify(services), {
+    status: 200,
+    headers: {
+      "content-type": "application/json",
+      "Access-Control-Allow-Origin": origin || "*",
+    },
+  });
 }

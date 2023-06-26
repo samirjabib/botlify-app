@@ -65,6 +65,27 @@ export interface Database {
           }
         ]
       }
+      service: {
+        Row: {
+          created_at: string | null
+          id: number
+          service_description: string | null
+          service_name: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          service_description?: string | null
+          service_name?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          service_description?: string | null
+          service_name?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
