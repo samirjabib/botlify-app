@@ -28,6 +28,7 @@ export default async function RootLayout({
     data: { session },
   } = await supabase.auth.getSession();
 
+
   return (
     <html lang="es" className={clsx(exo.variable, roboto.variable)}>
       <head>

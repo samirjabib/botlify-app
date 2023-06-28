@@ -2,11 +2,10 @@ import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-server";
 import { NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { Service } from "types/collections";
+import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
   const service: Service = await request.json();
-
-  console.log(service);
 
   if (!service) {
     return NextResponse.json(
@@ -26,10 +25,7 @@ export async function POST(request: Request) {
     data: { session },
   } = await supabase.auth.getSession();
 
-  console.log(
-    (await supabase.auth.getSession()).data,
-    "im the session in route"
-  );
+  console.log(session, "im the session in route");
 
   if (!session) {
     return NextResponse.json(
