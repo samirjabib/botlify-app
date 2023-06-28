@@ -9,7 +9,7 @@ export async function getProfileSupabase(
     data: { session },
   } = await supabase.auth.getSession();
 
-  console.log(session, " session in get");
+  console.log(session, " session in getProfile");
 
   let match;
 

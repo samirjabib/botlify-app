@@ -2,10 +2,11 @@ import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-server";
 import { NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { Service } from "types/collections";
-import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
   const service: Service = await request.json();
+
+  console.log(service);
 
   if (!service) {
     return NextResponse.json(
@@ -27,25 +28,25 @@ export async function POST(request: Request) {
 
   console.log(session, "im the session in route");
 
-  if (!session) {
-    return NextResponse.json(
-      {
-        message: "You are not logged",
-        hint: "¿you must be login in your admin account for create services?",
-      },
-      { status: 401 }
-    );
-  }
+  // if (!session) {
+  //   return NextResponse.json(
+  //     {
+  //       message: "You are not logged",
+  //       hint: "¿you must be login in your admin account for create services?",
+  //     },
+  //     { status: 401 }
+  //   );
+  // }
 
-  const { error, status, statusText } = await supabase
-    .from("services")
-    .insert({ ...service, id: uuidv4() });
+  // const { error, status, statusText } = await supabase
+  //   .from("services")
+  //   .insert({ ...service, id: uuidv4() });
 
-  console.log(error);
+  // console.log(error);
 
-  if (error) {
-    return NextResponse.json(error, { status: 500 });
-  }
+  // if (error) {
+  //   return NextResponse.json(error, { status: 500 });
+  // }
 
   return NextResponse.json(
     { message: "service has be created" },

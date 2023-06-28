@@ -1,10 +1,11 @@
 // middleware.ts
+import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { rateLimiter } from "@/lib/redis/rate-limiter";
-import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 import { Database } from "types/supabase";
 import { getProfileSupabase } from "./lib/supabase/utils/getSessionSupabase";
+import { profile } from "console";
 
 const allowedOrigins =
   process.env.VERCEL_ENV === "production"
@@ -26,9 +27,6 @@ export async function middleware(req: NextRequest) {
 
   //get profile and session
   const { profile, session } = await getProfileSupabase(supabase);
-  console.log(profile, "im the profile in middleware");
-
-  console.log(session, "im the session in middleware");
 
   const pathname = req.nextUrl.pathname;
   const origin = req.headers.get("origin");
@@ -56,5 +54,6 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   //here config the path for match with the middleware
-  matcher: ["/api/message/:path*", "/api/services/:path*", "/"],
+  // matcher: [, "/"],
+  matcher: ["/", "/api/services/:path*", "/api/message/:path*"],
 };
