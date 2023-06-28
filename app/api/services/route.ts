@@ -1,12 +1,12 @@
-import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-server";
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import { Service } from "types/collections";
+import { createRouteHandlerSupabase } from "@/lib/supabase/supabase-server";
+import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const service: Service = await request.json();
-
-  console.log(service);
 
   if (!service) {
     return NextResponse.json(
@@ -17,16 +17,13 @@ export async function POST(request: Request) {
       { status: 400 }
     );
   }
-
   // Get Supabase Client
-  const supabase = createRouteHandlerSupabase();
+  const supabase = createRouteHandlerClient({ cookies }); //this have a problmen because next13 don't have cookies in fetch
 
   // Check User is logged in
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  console.log(session, "im the session in route");
+  // const {
+  //   data: { session },
+  // } = await supabase.auth.getSession();
 
   // if (!session) {
   //   return NextResponse.json(
@@ -38,20 +35,17 @@ export async function POST(request: Request) {
   //   );
   // }
 
-  // const { error, status, statusText } = await supabase
-  //   .from("services")
-  //   .insert({ ...service, id: uuidv4() });
+  const { error, status, statusText } = await supabase
+    .from("services")
+    .insert({ ...service, id: uuidv4() });
 
-  // console.log(error);
+  console.log(error);
 
-  // if (error) {
-  //   return NextResponse.json(error, { status: 500 });
-  // }
+  if (error) {
+    return NextResponse.json(error, { status: 500 });
+  }
 
-  return NextResponse.json(
-    { message: "service has be created" },
-    { status: 201 }
-  );
+  return NextResponse.json({ message: "created" }, { status: 201 });
 }
 
 // export async function GET(request: Request) {
