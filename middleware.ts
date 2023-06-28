@@ -27,6 +27,8 @@ export default async function middleware(req: NextRequest) {
 
   await supabase.auth.getSession();
 
+  console.log("middleware on");
+
   // If it's an API Route, check the CORS origin
   if (origin && pathname.startsWith("/api") && !isAllowed(origin)) {
     return new NextResponse(null, { status: 401, statusText: "Unauthorized" });
@@ -34,7 +36,7 @@ export default async function middleware(req: NextRequest) {
 
   return res;
 
-  // //Rate limtier  for messages //TODO found how i can use multiples middlewares
+  //Rate limtier  for messages //TODO found how i can use multiples middlewares
   // const ip = req.ip ?? "127.0.0.1";
   // try {
   //   const { success } = await rateLimiter.limit(ip);
@@ -50,5 +52,5 @@ export default async function middleware(req: NextRequest) {
 
 export const config = {
   //here config the path for match with the middleware
-  // matcher: "/api/message/:path*",
+  matcher: ["/api/message/:path*", "/api/services/:path*"],
 };

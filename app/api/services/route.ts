@@ -6,6 +6,8 @@ import { Service } from "types/collections";
 export async function POST(request: Request) {
   const service: Service = await request.json();
 
+  console.log(service);
+
   if (!service) {
     return NextResponse.json(
       {
@@ -16,14 +18,18 @@ export async function POST(request: Request) {
     );
   }
 
-  //get supabase client
+  // Get Supabase Client
   const supabase = createRouteHandlerSupabase();
 
-  //Check user is logged and is admin
-
+  // Check User is logged in
   const {
     data: { session },
   } = await supabase.auth.getSession();
+
+  console.log(
+    (await supabase.auth.getSession()).data,
+    "im the session in route"
+  );
 
   if (!session) {
     return NextResponse.json(
@@ -35,10 +41,11 @@ export async function POST(request: Request) {
     );
   }
 
-  //insert service
   const { error, status, statusText } = await supabase
     .from("services")
     .insert({ ...service, id: uuidv4() });
+
+  console.log(error);
 
   if (error) {
     return NextResponse.json(error, { status: 500 });
@@ -50,23 +57,23 @@ export async function POST(request: Request) {
   );
 }
 
-export async function GET(request: Request) {
-  //create supabase client
+// export async function GET(request: Request) {
+//   //create supabase client
 
-  const supabase = createRouteHandlerSupabase();
+//   const supabase = createRouteHandlerSupabase();
 
-  //get all services
-  const { data: services, error } = await supabase.from("services").select("*");
+//   //get all services
+//   const { data: services, error } = await supabase.from("services").select("*");
 
-  if (error) {
-    return NextResponse.json(error, { status: 500 });
-  }
+//   if (error) {
+//     return NextResponse.json(error, { status: 500 });
+//   }
 
-  return new NextResponse(JSON.stringify(services), {
-    status: 200,
-    headers: {
-      "content-type": "application/json",
-      "Access-Control-Allow-Origin": origin || "*",
-    },
-  });
-}
+//   return new NextResponse(JSON.stringify(services), {
+//     status: 200,
+//     headers: {
+//       "content-type": "application/json",
+//       "Access-Control-Allow-Origin": origin || "*",
+//     },
+//   });
+// }
