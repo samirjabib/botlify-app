@@ -20,7 +20,7 @@ const NavLinksDesktop = ({
         <NavigationMenu.Item>
           <NavigationMenu.Link
             className="text-white relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left "
-            href="https://github.com/radix-ui"
+            href="/"
           >
             Home
           </NavigationMenu.Link>
@@ -44,7 +44,7 @@ const NavLinksDesktop = ({
               </li>
 
               <ListItem
-                href="https://stitches.dev/"
+                href=""
                 title="Bot Mesero"
                 className="transition-all hover:bg-blue "
               >
@@ -58,7 +58,7 @@ const NavLinksDesktop = ({
                 Beautiful, thought-out palettes with auto dark mode.
               </ListItem>
               <ListItem
-                href="https://icons.radix-ui.com/"
+                href=""
                 title="Bot Asesor"
                 className="transition-all hover:bg-blue "
               >
@@ -76,7 +76,10 @@ const NavLinksDesktop = ({
           </NavigationMenu.Link>
         </NavigationMenu.Item>
         <NavigationMenu.Item>
-          <NavigationMenu.Link className="text-white relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ">
+          <NavigationMenu.Link
+            href="contact"
+            className="text-white relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left "
+          >
             Contacto
           </NavigationMenu.Link>
         </NavigationMenu.Item>
