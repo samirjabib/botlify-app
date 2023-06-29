@@ -4,12 +4,12 @@ import BlogHero from "./blog-hero";
 
 const Blog = () => {
   return (
-    <section className="wrapper-mobile sm:wrapper border-2 border-red-500">
-      <Title as="h1" size={"sectionTitle"} className="">
-        Botlify Blog
+    <section className="wrapper-mobile sm:wrapper ">
+      <Title as="h1" size={"mainTitle"} className="my-8">
+        Blog
       </Title>
       <BlogHero />
-      <div>
+      {/* <div>
         {Array.from({ length: 10 }).map(() => (
           <BlogCard
             author={{
@@ -24,7 +24,7 @@ const Blog = () => {
             title="Blog Post"
           />
         ))}
-      </div>
+      </div> */}
       <div></div>
     </section>
   );
