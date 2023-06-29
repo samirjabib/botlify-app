@@ -1,12 +1,32 @@
 import { Title } from "@/design-system/index";
+import BlogCard from "./blog-card";
+import BlogHero from "./blog-hero";
 
-const Blog = ({}) => {
+const Blog = () => {
   return (
-    <div>
-      <Title as="h1" size={"mainTitle"}>
-        Blog Content
+    <section className="wrapper-mobile sm:wrapper border-2 border-red-500">
+      <Title as="h1" size={"sectionTitle"} className="">
+        Botlify Blog
       </Title>
-    </div>
+      <BlogHero />
+      <div>
+        {Array.from({ length: 10 }).map(() => (
+          <BlogCard
+            author={{
+              name: "John Doe",
+              image:
+                "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+            }}
+            date="2021-08-01"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+            image="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            slug="blog-post"
+            title="Blog Post"
+          />
+        ))}
+      </div>
+      <div></div>
+    </section>
   );
 };
 

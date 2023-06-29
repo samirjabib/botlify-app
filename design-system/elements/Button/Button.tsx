@@ -11,9 +11,9 @@ type Intent = "primary" | "secondary" | "tertiary";
 const button = cva("", {
   variants: {
     intent: {
-      primary: ["text-black bg-white hover:bg-white/90"],
-      secondary: ["text-white bg-black hover:bg-black/90"],
-      tertiary: ["text-white bg-none decoration-solid"],
+      primary: ["main-button"],
+      secondary: ["secundary-button"],
+      tertiary: ["terciary-button"],
     },
   },
 });

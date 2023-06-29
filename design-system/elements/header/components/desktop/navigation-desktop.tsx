@@ -1,6 +1,4 @@
-import AvatarProfile from "@/components/ui/avatar";
 import NavLinksDesktop from "@/design-system/elements/header/components/desktop/navlinks-desktop";
-import Dropdown from "@/design-system/elements/dropdown-menu/dropdown-menu";
 import { Profile } from "types/collections";
 
 const NavigationDesktop = ({

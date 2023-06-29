@@ -44,21 +44,21 @@ const NavLinksDesktop = ({
               </li>
 
               <ListItem
-                href=""
+                href="/"
                 title="Bot Mesero"
                 className="transition-all hover:bg-blue "
               >
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
               <ListItem
-                href="/colors"
+                href="/"
                 title="Bot Asistente"
                 className="transition-all hover:bg-blue "
               >
                 Beautiful, thought-out palettes with auto dark mode.
               </ListItem>
               <ListItem
-                href=""
+                href="/"
                 title="Bot Asesor"
                 className="transition-all hover:bg-blue "
               >
@@ -77,7 +77,7 @@ const NavLinksDesktop = ({
         </NavigationMenu.Item>
         <NavigationMenu.Item>
           <NavigationMenu.Link
-            href="contact"
+            href="/contact"
             className="text-white relative text-sm w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left "
           >
             Contacto
