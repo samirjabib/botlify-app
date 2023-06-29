@@ -1,17 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
 
 interface BlogCategoryCardProps {
   image: string;
   name: string;
-  slug: string;
   description: string;
 }
 
-const BlogCategoryCard: FC<BlogCategoryCardProps> = (props) => {
-  const { image, name, slug, description } = props;
-
+const BlogCategoryCard: FC<BlogCategoryCardProps> = ({
+  description,
+  image,
+  name,
+}) => {
   return (
     <div className="w-full overflow-hidden bg-white p-6 rounded-lg shadow-md">
       <Image

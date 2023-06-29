@@ -24,7 +24,6 @@ const BlogCard: FC<BlogCardProps> = ({
   slug,
   title,
 }) => {
-    
   const formatDate = (date: string) => {
     const newDate = new Date(date);
     const formattedDate = `${newDate.getDate()}-${
@@ -50,7 +49,7 @@ const BlogCard: FC<BlogCardProps> = ({
           <p className="text-gray-500 mb-4">{description.slice(0, 200)}...</p>
           <div className="flex justify-between">
             <p className="text-gray-500">By {author.name}</p>
-            {/* <p className="text-gray-500"">{formatDate(date)}</p> */}
+            <p className="text-gray-500">{formatDate(date)}</p>
           </div>
         </div>
       </div>

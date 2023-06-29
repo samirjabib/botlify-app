@@ -1,6 +1,6 @@
 import { Title } from "@/design-system/index";
 
-const BlogContent = ({}) => {
+const Blog = ({}) => {
   return (
     <div>
       <Title as="h1" size={"mainTitle"}>
@@ -10,4 +10,4 @@ const BlogContent = ({}) => {
   );
 };
 
-export default BlogContent;
+export default Blog;
