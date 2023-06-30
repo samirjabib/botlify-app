@@ -4,12 +4,16 @@ import BlogHero from "./blog-hero";
 
 const Blog = () => {
   return (
-    <section className="wrapper-mobile sm:wrapper ">
-      <Title as="h1" size={"mainTitle"} className="my-8">
+    <section className="">
+      <Title
+        as="h1"
+        size={"mainTitle"}
+        className="wrapper-mobile sm:wrapper mt-12"
+      >
         Blog
       </Title>
       <BlogHero />
-      {/* <div>
+      <div>
         {Array.from({ length: 10 }).map(() => (
           <BlogCard
             author={{
@@ -24,7 +28,7 @@ const Blog = () => {
             title="Blog Post"
           />
         ))}
-      </div> */}
+      </div>
       <div></div>
     </section>
   );
