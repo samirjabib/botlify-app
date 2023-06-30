@@ -1,8 +1,7 @@
 import {defineField, defineType} from 'sanity'
-
+import LandingHero from './landing-hero'
+import LandingServices from './landing-services'
 // Import the landingHero type
-import landingHero from './landingHero'
-import landingServices from './landingServices'
 
 export default defineType({
   name: 'landingPageRecord',
@@ -13,15 +12,13 @@ export default defineType({
       name: 'landingHero',
       type: 'object',
       title: 'Landing Hero',
-      fields: [...landingHero.fields],
+      fields: [...LandingHero.fields],
     }),
     defineField({
       name: 'landingServices',
       type: 'object',
       title: 'Landing Services',
-      fields: [
-        ...landingServices.fields,
-      ],
-    })
+      fields: [...LandingServices.fields],
+    }),
   ],
 })
