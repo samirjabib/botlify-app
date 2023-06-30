@@ -7,6 +7,8 @@ import { ContactSchema } from "../../../lib/validators/contact-form";
 // import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
+  //TODO REMEMBER IMPLEMENT
+
   // const {
   //   register,
   //   handleSubmit,

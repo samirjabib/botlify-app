@@ -25,7 +25,7 @@ interface ButtonProps
   intent?: Intent;
 }
 
-export function Button({ children, className, ...props }: ButtonProps) {
+function Button({ children, className, ...props }: ButtonProps) {
   const classNames = twMerge(button(props), className);
 
   return (
@@ -34,3 +34,5 @@ export function Button({ children, className, ...props }: ButtonProps) {
     </button>
   );
 }
+
+export default Button;

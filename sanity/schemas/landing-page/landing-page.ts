@@ -9,6 +9,12 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+      validation: (Rule) => Rule.required().min(5).max(50),
+    }),
+    defineField({
       name: 'landingHero',
       type: 'object',
       title: 'Landing Hero',
