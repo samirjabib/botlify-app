@@ -1,6 +1,6 @@
 import * as Avatar from "@radix-ui/react-avatar";
 
-  const AvatarProfile = ({
+const AvatarProfile = ({
   image,
   name,
 }: {

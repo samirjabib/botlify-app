@@ -1,5 +1,4 @@
 import { Title } from "@/design-system/index";
-import { LandingPageRecord } from "../../../../sanity/types/schema";
 
 export default async function ServicePage({
   params,
@@ -9,7 +8,7 @@ export default async function ServicePage({
   return (
     <div>
       <Title as="h1" intent={"primary"} size={"mainTitle"}>
-        Services LandingPageRecord
+        Service slug {params.slug}
       </Title>
     </div>
   );
