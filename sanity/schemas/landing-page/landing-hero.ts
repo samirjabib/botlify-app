@@ -9,11 +9,12 @@ export default defineType({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      validation: (Rule) => Rule.required(),
       options: {
-        source: 'titleHeroBox',
+        source: 'title',
         maxLength: 96,
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'titleHeroBox',

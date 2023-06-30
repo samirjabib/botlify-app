@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'blog Record',
+  name: 'blogRecord',
   title: 'Blog',
   type: 'document',
   fields: [
@@ -23,7 +23,7 @@ export default defineType({
       type: 'object',
       title: 'Image',
       fields: [
-        {title: 'Image file', name: 'imageFile', type: 'file'},
+        {title: 'Image file', name: 'imageFile', type: 'file', options: {accept: 'image/*'}},
         {title: 'Image URL', name: 'imageURL', type: 'url'},
       ],
       validation: (Rule) =>
@@ -46,12 +46,42 @@ export default defineType({
     }),
     defineField({
       name: 'date',
-      type: 'date',
+      type: 'datetime',
       title: 'date',
       validation: (Rule) => Rule.required(),
       options: {
         dateFormat: 'YYYY-MM-DD',
       },
+    }),
+    defineField({
+      name: 'features',
+      type: 'array',
+      title: 'features',
+      of: [{type: 'string'}],
+    }),
+    defineField({
+      name: 'slug',
+      type: 'slug',
+      title: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+        slugify: (input: string) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      },
+    }),
+    defineField({
+      name: 'category',
+      type: 'reference',
+      title: 'category',
+      to: [{type: 'categoryRecord'}],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'author',
+      type: 'reference',
+      title: 'author',
+      to: [{type: 'authorRecord'}],
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })
