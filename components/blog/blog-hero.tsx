@@ -1,5 +1,4 @@
-import { Button } from "@/design-system/elements/button/Button";
-import { Title } from "@/design-system/index";
+import { Button, Title } from "@/design-system/index";
 import Image from "next/image";
 
 const BlogHero = () => {
